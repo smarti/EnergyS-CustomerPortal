@@ -1,0 +1,14 @@
+﻿[
+  {
+    "outputFile": "Styles/Less/style.css",
+    "inputFile": "Styles/Less/style.less"
+  },
+  {
+    "outputFile": "Styles/Less/bootstrap.css",
+    "inputFile": "Styles/Less/bootstrap.less"
+  },
+  {
+    "outputFile": "Styles/fonts/fonts.css",
+    "inputFile": "Styles/fonts/fonts.less"
+  }
+]
