@@ -3,11 +3,12 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>Klantportaal - Dashboard</title>
+    <title>Klantportaal - Geldzaken</title>
     <link href="../Styles/Less/style.css" rel="stylesheet" />
     <link href="../Styles/Less/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
+    <!--#region navigationpanel-->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -24,11 +25,11 @@
             <div class="collapse navbar-collapse" id="navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="False">Dashboard<span class="caret"></span></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="False">Geldzaken<span class="caret"></span></a>
                         <ul class="dropdown-menu">
+                            <li><a href="#">Dashboard</a></li>
                             <li><a href="#">Meterstand</a></li>
                             <li><a href="#">Contracten</a></li>
-                            <li><a href="#">Geldzaken</a></li>
                             <li><a href="#">Meldingen</a></li>
                         </ul>
                     </li>
@@ -39,14 +40,35 @@
             </div>
         </div>
     </nav>
-    <div class="container-fluid">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <a href="#">Meterstand</a>
+    <!--#endregion navigationpanel-->
+    <!--#region controlpanel-->
+    <div class="container-fluid controlpanel">
+        <div class="col-xs-3">
+            <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="True" aria-expanded="False">
+                    Filter datum <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">laatste week</a></li>
+                    <li><a href="#">laatste maand</a></li>
+                    <li><a href="#">laatste jaar</a></li>
+                    <li><a href="#">laatste decennium</a></li>
+                </ul>
             </div>
         </div>
+        <div class="col-xs-3 pull-right">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Zoek factuur..." />
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">Zoek</button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <!--#endregion controlpanel-->
+    <!--#region content panel-->
+    <div class="container-fluid">
         <div class="panel panel-default">
-            <div class="panel-heading"><a href="#">Geldzaken</a></div>
             <table class="table">
                 <thead>
                     <tr>
@@ -66,49 +88,8 @@
                 </tbody>
             </table>
         </div>
-        <div class="panel panel-default">
-            <div class="panel-heading"><a href="#">Meldingen</a></div>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Datum</th>
-                        <th>Soort</th>
-                        <th>Status</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1 januari 1970</td>
-                        <td>Verhuizing</td>
-                        <td class="text-success">Geen actie vereist</td>
-                        <td><a href="#">Meer informatie</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading"><a href="#">Contracten</a></div>
-            <table class="table">
-                <thead>
-                <tr>
-                        <th>Naam</th>
-                        <th>Kosten</th>
-                        <th>Status</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Test</td>
-                        <td>€ 0,00 per maand</td>
-                        <td class="text-success">Geen actie vereist</td>
-                        <td><a href="#">Meer informatie</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
     </div>
+    <!--#endregion content panel-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="../Scripts/bootstrap.min.js"></script>
 </body>
