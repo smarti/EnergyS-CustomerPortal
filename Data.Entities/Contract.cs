@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data.Entities
 {
-    public class Class1
+    public class Contract
     {
     }
 }
