@@ -7,7 +7,7 @@ using Data.Entities;
 
 namespace Domain.Models
 {
-    static class Map
+    public static class Map
     {
 
         public static Customer CustomerModelToCustomer(CustomerModel customerModel)
@@ -19,8 +19,8 @@ namespace Domain.Models
                 LastName = customerModel.LastName,
                 EMail = customerModel.EMail,
                 PhoneNumber = customerModel.PhoneNumber,
-                Address = customerModel.Address.MapToAddress(),
-                Password = customerModel.Password.MapToPassword()
+                //Address = customerModel.Address.MapToAddress(),
+                //Password = customerModel.Password.MapToPassword()
             };
 
             return convertedCustomer;
@@ -28,7 +28,7 @@ namespace Domain.Models
 
         public static CustomerModel CustomerToCustomerModel(Customer customer)
         {
-            Customer convertedCustomer = new Customer
+            CustomerModel convertedCustomer = new CustomerModel
             {
                 CustomerId = customer.CustomerId,
                 FirstName = customer.FirstName,
