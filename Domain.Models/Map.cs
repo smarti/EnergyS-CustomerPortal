@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Data.Entities;
 
 namespace Domain.Models
 {
     public static class Map
     {
-
         public static Customer CustomerModelToCustomer(CustomerModel customerModel)
         {
             Customer convertedCustomer = new Customer
@@ -19,8 +14,8 @@ namespace Domain.Models
                 LastName = customerModel.LastName,
                 EMail = customerModel.EMail,
                 PhoneNumber = customerModel.PhoneNumber,
-                //Address = customerModel.Address.MapToAddress(),
-                //Password = customerModel.Password.MapToPassword()
+                Address = AddressModelToAddress(customerModel.Address),
+                Password = PasswordModelToPassword(customerModel.Password)
             };
 
             return convertedCustomer;
@@ -35,25 +30,44 @@ namespace Domain.Models
                 LastName = customer.LastName,
                 EMail = customer.EMail,
                 PhoneNumber = customer.PhoneNumber,
-                //Address = customer.Address.MapToAddress(),
-                //Password = customer.Password.MapToPassword()
+                Address = AddressToAddressModel(customer.Address),
+                Password = PasswordToPasswordModel(customer.Password)
             };
 
             return convertedCustomer;
         }
 
-
-        public static BillModel BillToBillModel(Bill bill)
+        private static Password PasswordModelToPassword(PasswordModel customerModelPassword)
         {
-            BillModel convertedBill = new BillModel
+            throw new NotImplementedException();
+        }
+
+        private static PasswordModel PasswordToPasswordModel(Password customerPassword)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static Address AddressModelToAddress(AddressModel customerModelAddress)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static AddressModel AddressToAddressModel(Address customerAddress)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static ReportModel ReportToReportModel(Report report)
+        {
+            ReportModel convertedReport = new ReportModel()
             {
-                BillId = bill.BillId,
-                Amount = bill.Amount,
-                PaymentStatus = bill.PaymentStatus,
-                LastUpdate = bill.LastUpdate,
+                ReportId = report.ReportId,
+                Description = report.Description,
+                DescriptionStatus = report.DescriptionStatus,
+                LastUpdate = report.LastUpdate
             };
 
-            return convertedBill;
+            return convertedReport;
         }
     }
 }
