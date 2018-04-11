@@ -9,19 +9,25 @@ namespace Data.Entities
 {
     public class Customer
     {
-        public int Id { get; set; }
-        public string First_Name { get; set; }
-        public string Last_Name { get; set; }
+        // Primary Key
+        public int CustomerId { get; set; }
+
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string EMail { get; set; }
         public string PhoneNumber { get; set; }
-        public Address AddressId { get; set; }
-        public Contract ContractId { get; set; }
-        public MeterReading MeterReadingId { get; set; }
-        public Report ReportId { get; set; }
-        public Password PasswordId { get; set; }
-        public Bill BillId { get; set; }
-        public DateTime Valid_From { get; set; }
-        public DateTime Valid_Through { get; set; }
-        public DateTime Last_Update { get; set; }
+        public DateTime ValidFrom { get; set; }
+        public DateTime ValidThrough { get; set; }
+        public DateTime LastUpdate { get; set; }
+
+        // Foreign Keys
+        public virtual Address Address { get; set; }
+        public virtual Contract Contract { get; set; }
+        public virtual MeterReading MeterReading { get; set; }
+        public virtual Password Password { get; set; }
+
+        // TODO: FIX
+        //public virtual List<Report> Reports { get; set; }
+        //public virtual List<Bill> Bills { get; set; }
     }
 }
