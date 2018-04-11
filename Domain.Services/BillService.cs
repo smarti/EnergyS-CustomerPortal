@@ -9,13 +9,28 @@ using Domain.Models;
 
 namespace Domain.Services
 {
-    class BillService
+    public class BillService
     {
-        public List<BillModel> GetAllBills()
+        private DBContext _context;
+        private BillDataBySQL _data;
+        public BillService()
         {
-            BillDataBySQL _data = new BillDataBySQL();
-            List<Customer> customers = _data.GetAllCustomers();
-            return customers;
+            _context = new DBContext();
+            _data = new BillDataBySQL(_context);
+        }
+
+        public List<BillModel> GetAllBillsByCustomer(CustomerModel customer)
+        {
+            List<Bill> bills = _data.GetAllBillsByCustumer(Map.CustomerModelToCustomer(customer));
+
+            List<BillModel> convertedBills = new List<BillModel>();
+
+            foreach (Bill bill in bills)
+            {
+                convertedBills.Add(Map.BillToBillModel(bill));
+            }
+
+            return convertedBills;
         }
     }
 }

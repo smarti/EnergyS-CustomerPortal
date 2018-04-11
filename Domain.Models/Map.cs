@@ -43,5 +43,17 @@ namespace Domain.Models
         }
 
 
+        public static BillModel BillToBillModel(Bill bill)
+        {
+            BillModel convertedBill = new BillModel
+            {
+                BillId = bill.BillId,
+                Amount = bill.Amount,
+                PaymentStatus = bill.PaymentStatus,
+                LastUpdate = bill.LastUpdate,
+            };
+
+            return convertedBill;
+        }
     }
 }
