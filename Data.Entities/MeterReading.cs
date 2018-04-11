@@ -13,5 +13,8 @@ namespace Data.Entities
 
         public int MeterStand { get; set; }
         public DateTime LastUpdate { get; set; }
+
+        // Foreign Keys
+        public virtual Customer Customer { get; set; }
     }
 }

@@ -15,5 +15,8 @@ namespace Data.Entities
         public string DescriptionStatus { get; set; }
         public DateTime LastUpdate { get; set; }
 
+        // Foreign Keys
+        public virtual Customer Customer { get; set; }
+
     }
 }

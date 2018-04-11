@@ -18,6 +18,6 @@ namespace Data.Entities
         public string Country { get; set; }
         public DateTime LastUpdate { get; set; }
 
-        // Foreign key
+       
     }
 }
