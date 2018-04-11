@@ -7,7 +7,7 @@ using Data.Entities;
 
 namespace Data
 {
-    class ReportDataBySQL
+    public class ReportDataBySQL
     {
         private readonly DBContext Context;
 
