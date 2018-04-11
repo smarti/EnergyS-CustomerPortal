@@ -17,6 +17,5 @@ namespace Data.Entities
 
         // Foreign Keys
         public virtual Customer Customer { get; set; }
-
     }
 }
