@@ -21,38 +21,12 @@ namespace Domain.Models
             return convertedCustomer;
         }
 
-        public static CustomerModel CustomerToCustomerModel(Customer customer)
-        {
-            CustomerModel convertedCustomer = new CustomerModel
-            {
-                CustomerId = customer.CustomerId,
-                FirstName = customer.FirstName,
-                LastName = customer.LastName,
-                EMail = customer.EMail,
-                PhoneNumber = customer.PhoneNumber,
-                Address = AddressToAddressModel(customer.Address),
-                Password = PasswordToPasswordModel(customer.Password)
-            };
-
-            return convertedCustomer;
-        }
-
         private static Password PasswordModelToPassword(PasswordModel customerModelPassword)
         {
             throw new NotImplementedException();
         }
 
-        private static PasswordModel PasswordToPasswordModel(Password customerPassword)
-        {
-            throw new NotImplementedException();
-        }
-
         private static Address AddressModelToAddress(AddressModel customerModelAddress)
-        {
-            throw new NotImplementedException();
-        }
-
-        private static AddressModel AddressToAddressModel(Address customerAddress)
         {
             throw new NotImplementedException();
         }
