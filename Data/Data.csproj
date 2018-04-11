@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BillDataBySQL.cs" />
     <Compile Include="DBContext.cs" />
     <Compile Include="Migrations\201804110844527_InitialCreate.cs" />
     <Compile Include="Migrations\201804110844527_InitialCreate.Designer.cs">
