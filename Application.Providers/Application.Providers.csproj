@@ -56,10 +56,6 @@
       <Project>{3125ef51-a925-4fb1-ae03-f61e2dba9b98}</Project>
       <Name>Domain.Services</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Global\Global.Utility.csproj">
-      <Project>{a77e5a2a-f3cd-446d-a3e3-2bad7635f7e2}</Project>
-      <Name>Global.Utility</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -149,10 +149,6 @@
       <Project>{d8ddaddd-eae2-4a51-bbfe-5173ee75a84e}</Project>
       <Name>Application.ViewModels</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Global\Global.Utility.csproj">
-      <Project>{a77e5a2a-f3cd-446d-a3e3-2bad7635f7e2}</Project>
-      <Name>Global.Utility</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

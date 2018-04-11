@@ -46,10 +46,6 @@
     <Compile Include="ReportService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Contracts.Domain\Contracts.Domain.csproj">
-      <Project>{a888a69b-bfeb-4112-b4dc-3e8b8b87c144}</Project>
-      <Name>Contracts.Domain</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Data.Entities\Data.Entities.csproj">
       <Project>{5D1CF77D-9704-447D-A41E-1C32E1B31EF3}</Project>
       <Name>Data.Entities</Name>
@@ -61,10 +57,6 @@
     <ProjectReference Include="..\Domain.Models\Domain.Models.csproj">
       <Project>{4b9826a8-c336-4bd5-bfe9-9e100a6d8845}</Project>
       <Name>Domain.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Global\Global.Utility.csproj">
-      <Project>{a77e5a2a-f3cd-446d-a3e3-2bad7635f7e2}</Project>
-      <Name>Global.Utility</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
