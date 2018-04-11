@@ -21,14 +21,29 @@ namespace Domain.Models
             return convertedCustomer;
         }
 
-        private static Password PasswordModelToPassword(PasswordModel customerModelPassword)
+        private static Password PasswordModelToPassword(PasswordModel passwordModel)
         {
-            throw new NotImplementedException();
+            Password convertedPassword = new Password
+            {
+                PasswordHash = passwordModel.PasswordHash,
+                Salt = passwordModel.Salt
+            };
+
+            return convertedPassword;
         }
 
-        private static Address AddressModelToAddress(AddressModel customerModelAddress)
+        private static Address AddressModelToAddress(AddressModel addressModel)
         {
-            throw new NotImplementedException();
+            Address convertedAddress = new Address
+            {
+                StreetName = addressModel.StreetName,
+                HouseNumber = addressModel.HouseNumber,
+                PostalCode = addressModel.PostalCode,
+                City = addressModel.City,
+                Country = addressModel.Country
+            };
+
+            return convertedAddress;
         }
 
         public static ReportModel ReportToReportModel(Report report)
