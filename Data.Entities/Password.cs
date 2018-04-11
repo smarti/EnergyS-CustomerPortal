@@ -11,8 +11,8 @@ namespace Data.Entities
         //primary key
         public int PasswordId { get; set; }
 
-        public string UserPassword { get; set; }
-        
+        public string PasswordHash { get; set; }
+        public string Salt { get; set; }
         public DateTime LastUpdate { get; set; }
     }
 }

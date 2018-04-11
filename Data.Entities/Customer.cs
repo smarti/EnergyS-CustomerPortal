@@ -23,9 +23,5 @@ namespace Data.Entities
         // Foreign Keys
         public virtual Address Address { get; set; }
         public virtual Password Password { get; set; }
-
-        // TODO: FIX
-        //public virtual List<Report> Reports { get; set; }
-        //public virtual List<Bill> Bills { get; set; }
     }
 }
