@@ -44,17 +44,10 @@
     <Compile Include="BillModel.cs" />
     <Compile Include="ContractModel.cs" />
     <Compile Include="CustomerModel.cs" />
-    <Compile Include="Map.cs" />
     <Compile Include="MeterReadingModel.cs" />
     <Compile Include="PasswordModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportModel.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Data.Entities\Data.Entities.csproj">
-      <Project>{5D1CF77D-9704-447D-A41E-1C32E1B31EF3}</Project>
-      <Name>Data.Entities</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

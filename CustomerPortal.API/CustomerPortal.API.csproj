@@ -149,34 +149,6 @@
       <Project>{d8ddaddd-eae2-4a51-bbfe-5173ee75a84e}</Project>
       <Name>Application.ViewModels</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Contracts.Application\Contracts.Application.csproj">
-      <Project>{6911017e-35e4-49cd-8e85-c31997b69866}</Project>
-      <Name>Contracts.Application</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Contracts.Domain\Contracts.Domain.csproj">
-      <Project>{a888a69b-bfeb-4112-b4dc-3e8b8b87c144}</Project>
-      <Name>Contracts.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Data.Entities\Data.Entities.csproj">
-      <Project>{5d1cf77d-9704-447d-a41e-1c32e1b31ef3}</Project>
-      <Name>Data.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Data.Pattern\Data.Pattern.csproj">
-      <Project>{cc6761bf-58b4-43bb-81de-1d81dd89ad97}</Project>
-      <Name>Data.Pattern</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Data\Data.csproj">
-      <Project>{29df86b7-e217-4fe7-a351-3532df73faa8}</Project>
-      <Name>Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Domain.Models\Domain.Models.csproj">
-      <Project>{4b9826a8-c336-4bd5-bfe9-9e100a6d8845}</Project>
-      <Name>Domain.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Domain.Services\Domain.Services.csproj">
-      <Project>{3125ef51-a925-4fb1-ae03-f61e2dba9b98}</Project>
-      <Name>Domain.Services</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Global\Global.Utility.csproj">
       <Project>{a77e5a2a-f3cd-446d-a3e3-2bad7635f7e2}</Project>
       <Name>Global.Utility</Name>
