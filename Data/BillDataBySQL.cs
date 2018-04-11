@@ -9,16 +9,23 @@ namespace Data
 {
     class BillDataBySQL
     {
+        private readonly DBContext Context;
+
+        public BillDataBySQL(DBContext context)
+        {
+            Context = context;
+        }
         public List<Bill> GetAllBillsByCustumer(Customer customer)
         {
-            DBContext _context = new DBContext();
-
             List<Bill> bills = new List<Bill>();
 
-            foreach (Bill bill in _context.Bills)
+            foreach (Bill bill in Context.Bills)
             {
-                if _context.
-                bills.Add(bill);
+                if (bill.Customer == customer)
+                {
+                    bills.Add(bill);
+                }
+                
             }
 
             return bills;
