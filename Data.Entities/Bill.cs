@@ -14,5 +14,8 @@ namespace Data.Entities
         public int Amount { get; set; }
         public string PaymentStatus { get; set; }
         public DateTime LastUpdate { get; set; }
+
+        // Foreign Keys
+        public virtual Customer Customer { get; set; }
     }
 }
