@@ -58,6 +58,10 @@
     <Compile Include="Migrations\201804110848478_AddedAllTables.Designer.cs">
       <DependentUpon>201804110848478_AddedAllTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804110954099_UpdatedAllTables.cs" />
+    <Compile Include="Migrations\201804110954099_UpdatedAllTables.Designer.cs">
+      <DependentUpon>201804110954099_UpdatedAllTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -71,6 +75,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804110848478_AddedAllTables.resx">
       <DependentUpon>201804110848478_AddedAllTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804110954099_UpdatedAllTables.resx">
+      <DependentUpon>201804110954099_UpdatedAllTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
