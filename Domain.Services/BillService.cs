@@ -27,7 +27,7 @@ namespace Domain.Services
 
             foreach (Bill bill in bills)
             {
-                convertedBills.Add(Map.BillToBillModel(bill));
+                //convertedBills.Add(Map.BillToBillModel(bill));
             }
 
             return convertedBills;
