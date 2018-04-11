@@ -28,7 +28,7 @@ namespace Domain.Services
 
             foreach (Report report in reports)
             {
-                //convertedReports.Add();
+                convertedReports.Add(Map.ReportToReportModel(report));
             }
 
             return convertedReports;

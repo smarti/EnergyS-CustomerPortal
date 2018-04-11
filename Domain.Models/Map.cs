@@ -7,7 +7,7 @@ namespace Domain.Models
     {
         public static Customer CustomerModelToCustomer(CustomerModel customerModel)
         {
-            var convertedCustomer = new Customer
+            Customer convertedCustomer = new Customer
             {
                 CustomerId = customerModel.CustomerId,
                 FirstName = customerModel.FirstName,
@@ -23,7 +23,7 @@ namespace Domain.Models
 
         public static CustomerModel CustomerToCustomerModel(Customer customer)
         {
-            var convertedCustomer = new CustomerModel
+            CustomerModel convertedCustomer = new CustomerModel
             {
                 CustomerId = customer.CustomerId,
                 FirstName = customer.FirstName,
@@ -55,6 +55,19 @@ namespace Domain.Models
         private static AddressModel AddressToAddressModel(Address customerAddress)
         {
             throw new NotImplementedException();
+        }
+
+        public static ReportModel ReportToReportModel(Report report)
+        {
+            ReportModel convertedReport = new ReportModel()
+            {
+                ReportId = report.ReportId,
+                Description = report.Description,
+                DescriptionStatus = report.DescriptionStatus,
+                LastUpdate = report.LastUpdate
+            };
+
+            return convertedReport;
         }
     }
 }
