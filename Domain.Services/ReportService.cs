@@ -22,7 +22,7 @@ namespace Domain.Services
 
         public List<ReportModel> GetAllReportsByCustomer(CustomerModel customer)
         {
-            List<Report> reports = _data.GetAllReportsByCustomer(customer.MapToCustomer());
+            List<Report> reports = _data.GetAllReportsByCustomer(Map.CustomerModelToCustomer(customer));
 
             List<ReportModel> convertedReports = new List<ReportModel>();
 
