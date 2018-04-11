@@ -39,6 +39,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,12 +49,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="DBContext.cs" />
+    <Compile Include="Migrations\201804110844527_InitialCreate.cs" />
+    <Compile Include="Migrations\201804110844527_InitialCreate.Designer.cs">
+      <DependentUpon>201804110844527_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804110848478_AddedAllTables.cs" />
+    <Compile Include="Migrations\201804110848478_AddedAllTables.Designer.cs">
+      <DependentUpon>201804110848478_AddedAllTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201804110844527_InitialCreate.resx">
+      <DependentUpon>201804110844527_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804110848478_AddedAllTables.resx">
+      <DependentUpon>201804110848478_AddedAllTables.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data.Entities\Data.Entities.csproj">
+      <Project>{5d1cf77d-9704-447d-a41e-1c32e1b31ef3}</Project>
+      <Name>Data.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
