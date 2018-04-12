@@ -14,13 +14,17 @@ namespace Application.Providers
         {
             ReportViewModel convertedReportModel = new ReportViewModel
             {
-                ReportId = reportModel.ReportId,
                 Description = reportModel.Description,
                 DescriptionStatus = reportModel.DescriptionStatus,
                 LastUpdate = reportModel.LastUpdate
             };
 
             return convertedReportModel;
+        }
+
+        public static CustomerModel CustomerViewModelToCustomerModel(CustomerViewModel customer)
+        {
+            throw new NotImplementedException();
         }
     }
 }

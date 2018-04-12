@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Models
+namespace Application.ViewModels
 {
-    public class CustomerModel
+    public class CustomerViewModel
     {
         public int CustomerId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string EMail { get; set; }
         public string PhoneNumber { get; set; }
-        public AddressModel Address { get; set; }
-        public PasswordModel Password { get; set; }
+        public AddressViewModel Address { get; set; }
+        public PasswordViewModel Password { get; set; }
     }
 }
