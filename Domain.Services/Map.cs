@@ -5,48 +5,42 @@ namespace Domain.Models
 {
     public static class Map
     {
-        public static Customer CustomerModelToCustomer(CustomerModel customerModel)
+        public static Customer CustomerModelToCustomer(CustomerModel customer)
         {
             Customer convertedCustomer = new Customer
             {
-                CustomerId = customerModel.CustomerId,
-                FirstName = customerModel.FirstName,
-                LastName = customerModel.LastName,
-                EMail = customerModel.EMail,
-                PhoneNumber = customerModel.PhoneNumber,
-                Address = AddressModelToAddress(customerModel.Address),
-                Password = PasswordModelToPassword(customerModel.Password)
+                CustomerId = customer.CustomerId,
+                FirstName = customer.FirstName,
+                LastName = customer.LastName,
+                EMail = customer.EMail,
+                PhoneNumber = customer.PhoneNumber,
+                Address = AddressModelToAddress(customer.Address),
+                Password = PasswordModelToPassword(customer.Password)
             };
 
             return convertedCustomer;
         }
 
-        private static Password PasswordModelToPassword(PasswordModel passwordModel)
+        private static Password PasswordModelToPassword(PasswordModel password)
         {
-            if (passwordModel == null)
-                return null;
-
             Password convertedPassword = new Password
             {
-                PasswordHash = passwordModel.PasswordHash,
-                Salt = passwordModel.Salt
+                PasswordHash = password.PasswordHash,
+                Salt = password.Salt
             };
 
             return convertedPassword;
         }
 
-        private static Address AddressModelToAddress(AddressModel addressModel)
+        private static Address AddressModelToAddress(AddressModel address)
         {
-            if (addressModel == null)
-                return null;
-
             Address convertedAddress = new Address
             {
-                StreetName = addressModel.StreetName,
-                HouseNumber = addressModel.HouseNumber,
-                PostalCode = addressModel.PostalCode,
-                City = addressModel.City,
-                Country = addressModel.Country
+                StreetName = address.StreetName,
+                HouseNumber = address.HouseNumber,
+                PostalCode = address.PostalCode,
+                City = address.City,
+                Country = address.Country
             };
 
             return convertedAddress;
@@ -79,17 +73,58 @@ namespace Domain.Models
 
         }
 
-        private static Bill BillModelToBill(BillModel billModel)
+        private static Bill BillModelToBill(BillModel bill)
         {
             Bill convertedBill = new Bill
             {
-                BillId = billModel.BillId,
-                Amount = billModel.Amount,
-                PaymentStatus = billModel.PaymentStatus,
-                LastUpdate = billModel.LastUpdate
+                BillId = bill.BillId,
+                Amount = bill.Amount,
+                PaymentStatus = bill.PaymentStatus,
+                LastUpdate = bill.LastUpdate
             };
 
             return convertedBill;
+        }
+
+        public static CustomerModel CustomerToCustomerModel(Customer customer)
+        {
+            CustomerModel convertedCustomer = new CustomerModel
+            {
+                CustomerId = customer.CustomerId,
+                FirstName = customer.FirstName,
+                LastName = customer.LastName,
+                EMail = customer.EMail,
+                PhoneNumber = customer.PhoneNumber,
+                Address = AddressToAddressModel(customer.Address),
+                Password = PasswordToPasswordModel(customer.Password)
+            };
+
+            return convertedCustomer;
+        }
+
+        private static PasswordModel PasswordToPasswordModel(Password password)
+        {
+            PasswordModel convertedPassword = new PasswordModel
+            {
+                PasswordHash = password.PasswordHash,
+                Salt = password.Salt
+            };
+
+            return convertedPassword;
+        }
+
+        private static AddressModel AddressToAddressModel(Address address)
+        {
+            AddressModel convertedAddress = new AddressModel
+            {
+                StreetName = address.StreetName,
+                HouseNumber = address.HouseNumber,
+                PostalCode = address.PostalCode,
+                City = address.City,
+                Country = address.Country
+            };
+
+            return convertedAddress;
         }
     }
 }

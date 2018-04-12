@@ -18,8 +18,13 @@ namespace Application.Providers
             _service = new ReportService();
         }
 
-        public List<ReportViewModel> GetAllReportsByCustomer(CustomerViewModel customer)
+        public List<ReportViewModel> GetAllReportsByCustomerId(int customerId)
         {
+            CustomerService customerService = new CustomerService();
+            CustomerViewModel customer =
+                Map.CustomerModelToCustomerViewModel(customerService.GetCustomerById(customerId));
+
+
             List<ReportModel> reports =
                 _service.GetAllReportsByCustomer(Map.CustomerViewModelToCustomerModel(customer));
 

@@ -19,11 +19,9 @@ namespace CustomerPortal.API.Controllers
         }
 
         [HttpGet]
-        public List<ReportViewModel> GetAllReportsByCustomer(int customerId)
+        public List<ReportViewModel> GetAllReportsByCustomerId(int customerId)
         {
-            CustomerViewModel customer = new CustomerViewModel { CustomerId = customerId };
-
-            List<ReportViewModel> reports = _provider.GetAllReportsByCustomer(customer);
+            List<ReportViewModel> reports = _provider.GetAllReportsByCustomerId(customerId);
 
             return reports;
         }

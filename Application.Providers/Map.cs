@@ -62,5 +62,46 @@ namespace Application.Providers
 
             return convertedAddress;
         }
+
+        public static CustomerViewModel CustomerModelToCustomerViewModel(CustomerModel customerModel)
+        {
+            CustomerViewModel convertedCustomer = new CustomerViewModel
+            {
+                CustomerId = customerModel.CustomerId,
+                FirstName = customerModel.FirstName,
+                LastName = customerModel.LastName,
+                EMail = customerModel.EMail,
+                PhoneNumber = customerModel.PhoneNumber,
+                Address = AddressModelToAddressViewModel(customerModel.Address),
+                Password = PasswordModelToPasswordViewModel(customerModel.Password)
+            };
+
+            return convertedCustomer;
+        }
+
+        private static PasswordViewModel PasswordModelToPasswordViewModel(PasswordModel passwordModel)
+        {
+            PasswordViewModel convertedPassword = new PasswordViewModel
+            {
+                PasswordHash = passwordModel.PasswordHash,
+                Salt = passwordModel.Salt
+            };
+
+            return convertedPassword;
+        }
+
+        private static AddressViewModel AddressModelToAddressViewModel(AddressModel addressModel)
+        {
+            AddressViewModel convertedAddress = new AddressViewModel
+            {
+                City = addressModel.City,
+                Country = addressModel.Country,
+                HouseNumber = addressModel.HouseNumber,
+                PostalCode = addressModel.PostalCode,
+                StreetName = addressModel.StreetName
+            };
+
+            return convertedAddress;
+        }
     }
 }
