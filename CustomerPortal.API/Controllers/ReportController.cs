@@ -18,6 +18,7 @@ namespace CustomerPortal.API.Controllers
             _provider = new ReportProvider();
         }
 
+        [HttpGet]
         public List<ReportViewModel> GetAllReportsByCustomer(int customerId)
         {
             CustomerViewModel customer = new CustomerViewModel { CustomerId = customerId };

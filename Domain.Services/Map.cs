@@ -23,6 +23,9 @@ namespace Domain.Models
 
         private static Password PasswordModelToPassword(PasswordModel passwordModel)
         {
+            if (passwordModel == null)
+                return null;
+
             Password convertedPassword = new Password
             {
                 PasswordHash = passwordModel.PasswordHash,
@@ -34,6 +37,9 @@ namespace Domain.Models
 
         private static Address AddressModelToAddress(AddressModel addressModel)
         {
+            if (addressModel == null)
+                return null;
+
             Address convertedAddress = new Address
             {
                 StreetName = addressModel.StreetName,
