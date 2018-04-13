@@ -15,7 +15,7 @@ namespace Data
         {
             Context = context;
         }
-        public List<Contract> GetAllBillsByCustumer(Customer customer)
+        public List<Contract> GetAllContractsByCustomer(Customer customer)
         {
             List<Contract> contracts = new List<Contract>();
 

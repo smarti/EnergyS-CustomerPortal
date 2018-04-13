@@ -154,6 +154,19 @@ namespace Domain.Models
             return convertMeterReading;
 
         }
-        
+
+        public static ContractModel ContractToContractModel(Contract contract)
+        {
+            ContractModel convertContract = new ContractModel()
+            {
+                ContractId = contract.ContractId,
+                Description = contract.Description,
+                ContractStatus = contract.ContractStatus,
+                LastUpdate = contract.LastUpdate,
+
+            };
+
+            return convertContract;
+        }
     }
 }
