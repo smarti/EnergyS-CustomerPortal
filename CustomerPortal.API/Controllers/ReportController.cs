@@ -8,16 +8,18 @@ using Application.ViewModels;
 
 namespace CustomerPortal.API.Controllers
 {
+
+    [RoutePrefix("api/reports")]
     public class ReportController : ApiController
     {
-        private ReportProvider _provider;
+        private readonly ReportProvider _provider;
 
         public ReportController() : base()
         {
             _provider = new ReportProvider();
         }
 
-        [Route("api/customers/{customerId}/reports")]
+        [Route("all/{customerId}")]
         [HttpGet]
         public List<ReportViewModel> GetAllReportsByCustomerId(int customerId)
         {
@@ -26,8 +28,8 @@ namespace CustomerPortal.API.Controllers
             return reports;
         }
 
-        [Route("api/report/add")]
         [HttpPost]
+        [Route("add")]
         public void CreateReportByCustomerId(int customerId, string description)
         {
             ReportViewModel report = new ReportViewModel
