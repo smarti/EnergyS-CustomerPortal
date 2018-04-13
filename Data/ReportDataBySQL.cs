@@ -28,6 +28,8 @@ namespace Data
 
         public void CreateReport(Report report)
         {
+            report.Customer = _context.Customers.Find(report.Customer.CustomerId);
+
             _context.Reports.Add(report);
 
             _context.SaveChangesAsync();
