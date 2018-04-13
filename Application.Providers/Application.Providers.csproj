@@ -43,6 +43,7 @@
     <Compile Include="BillProvider.cs" />
     <Compile Include="CustomerProvider.cs" />
     <Compile Include="Map.cs" />
+    <Compile Include="MeterReadingProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportProvider.cs" />
   </ItemGroup>

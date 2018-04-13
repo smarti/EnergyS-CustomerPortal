@@ -52,6 +52,7 @@
     <Compile Include="BillDataBySQL.cs" />
     <Compile Include="CustomerDataBySQL.cs" />
     <Compile Include="DBContext.cs" />
+    <Compile Include="MeterReadingDataBySQL.cs" />
     <Compile Include="Migrations\201804110844527_InitialCreate.cs" />
     <Compile Include="Migrations\201804110844527_InitialCreate.Designer.cs">
       <DependentUpon>201804110844527_InitialCreate.cs</DependentUpon>

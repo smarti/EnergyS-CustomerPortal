@@ -123,21 +123,23 @@ namespace Domain.Models
                 City = address.City,
                 Country = address.Country
             };
-
+            
             return convertedAddress;
         }
 
-        public static Report ReportModelToReport(ReportModel report)
+        public static MeterReadingModel MeterReadingToMeterReadingModel(MeterReading meterReading)
         {
-            Report convertedReport = new Report()
+            MeterReadingModel convertMeterReading = new MeterReadingModel()
             {
-                ReportId = report.ReportId,
-                Description = report.Description,
-                DescriptionStatus = report.DescriptionStatus,
-                LastUpdate = report.LastUpdate
+                MeterReadingId = meterReading.MeterReadingId,
+                CurrentReading = meterReading.CurrentReading,
+                LastUpdate = meterReading.LastUpdate,
+
             };
 
-            return convertedReport;
+            return convertMeterReading;
+
         }
+        
     }
 }
