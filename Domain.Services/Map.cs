@@ -168,5 +168,19 @@ namespace Domain.Models
 
             return convertContract;
         }
+
+        public static Contract ContractModelToContract(ContractModel contract)
+        {
+            Contract convertContract = new Contract()
+            {
+                ContractId = contract.ContractId,
+                Description = contract.Description,
+                ContractStatus = contract.ContractStatus,
+                LastUpdate = contract.LastUpdate,
+
+            };
+
+            return convertContract;
+        }
     }
 }

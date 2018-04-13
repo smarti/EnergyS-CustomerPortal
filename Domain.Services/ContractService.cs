@@ -33,5 +33,12 @@ namespace Domain.Services
 
             return convertedContracts;
         }
+        public void CreateContractByCustomer(CustomerModel customer, ContractModel contract)
+        {
+            Contract convertedContract = Map.ContractModelToContract(contract);
+            convertedContract.Customer = Map.CustomerModelToCustomer(customer);
+
+            _data.CreateContract(convertedContract);
+        }
     }
 }
