@@ -59,6 +59,20 @@ namespace Domain.Models
             return convertedReport;
         }
 
+        public static Report ReportModelToReport(ReportModel report)
+        {
+            Report convertedReport = new Report()
+            {
+                ReportId = report.ReportId,
+                Description = report.Description,
+                DescriptionStatus = report.DescriptionStatus,
+                LastUpdate = report.LastUpdate
+            };
+
+            return convertedReport;
+        }
+
+
         public static BillModel BillToBillModel(Bill bill)
         {
             BillModel convertedBill = new BillModel()
