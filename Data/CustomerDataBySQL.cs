@@ -20,5 +20,14 @@ namespace Data
         {
             return _context.Customers.Find(customerId);
         }
+
+        public Customer GetCustomerByEMail(string eMail)
+        {
+            List<Customer> customers = new List<Customer>();
+
+            customers.AddRange(_context.Customers.Where(x => x.EMail == eMail));
+
+            return customers[0];
+        }
     }
 }

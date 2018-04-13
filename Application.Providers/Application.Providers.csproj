@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="BillProvider.cs" />
     <Compile Include="ContractProvider.cs" />
+    <Compile Include="CustomerProvider.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="MeterReadingProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
