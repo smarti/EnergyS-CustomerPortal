@@ -103,5 +103,33 @@ namespace Application.Providers
 
             return convertedAddress;
         }
+
+
+        public static BillViewModel BillModelToBillViewModel(BillModel billModel)
+        {
+            BillViewModel convertedBill = new BillViewModel()
+            {
+                BillId = billModel.BillId,
+                Amount = billModel.Amount,
+                PaymentStatus = billModel.PaymentStatus,
+                LastUpdate = billModel.LastUpdate,
+            };
+
+            return convertedBill;
+        }
+
+        private static BillModel BillViewModelToBillModel(BillViewModel billViewModel)
+        {
+            BillModel convertedBill = new BillModel
+            {
+                BillId = billViewModel.BillId,
+                Amount = billViewModel.Amount,
+                PaymentStatus = billViewModel.PaymentStatus,
+                LastUpdate = billViewModel.LastUpdate,
+                
+            };
+
+            return convertedBill;
+        }
     }
 }

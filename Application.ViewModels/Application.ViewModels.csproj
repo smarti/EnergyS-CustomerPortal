@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddressViewModel.cs" />
+    <Compile Include="BillViewModel.cs" />
     <Compile Include="CustomerViewModel.cs" />
     <Compile Include="PasswordViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
