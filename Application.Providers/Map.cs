@@ -171,5 +171,19 @@ namespace Application.Providers
 
             return convertContract;
         }
+
+        public static ContractModel ContractViewModelToContractModel(ContractViewModel contractViewModel)
+        {
+            ContractModel convertContract = new ContractModel()
+            {
+                ContractId = contractViewModel.ContractId,
+                Description = contractViewModel.Description,
+                ContractStatus = contractViewModel.ContractStatus,
+                LastUpdate = contractViewModel.LastUpdate,
+
+            };
+
+            return convertContract;
+        }
     }
 }

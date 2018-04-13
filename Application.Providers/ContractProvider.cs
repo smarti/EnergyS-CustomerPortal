@@ -35,5 +35,14 @@ namespace Application.Providers
 
             return convertedContracts;
         }
+
+        public void CreateContractByCustomerId(int customerId, ContractViewModel contract)
+        {
+            CustomerService customerService = new CustomerService();
+            CustomerViewModel customer =
+                Map.CustomerModelToCustomerViewModel(customerService.GetCustomerById(customerId));
+
+            _service.CreateContractByCustomer(Map.CustomerViewModelToCustomerModel(customer), Map.ContractViewModelToContractModel(contract));
+        }
     }
 }

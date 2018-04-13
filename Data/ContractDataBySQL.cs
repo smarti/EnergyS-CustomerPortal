@@ -23,5 +23,14 @@ namespace Data
 
             return contracts;
         }
+
+        public void CreateContract(Contract contract)
+        {
+            contract.Customer = Context.Customers.Find(contract.Customer.CustomerId);
+
+            Context.Contracts.Add(contract);
+
+            Context.SaveChangesAsync();
+        }
     }
 }
