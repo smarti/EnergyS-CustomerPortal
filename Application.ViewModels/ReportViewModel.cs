@@ -10,6 +10,6 @@ namespace Application.ViewModels
     {
         public string Description { get; set; }
         public string DescriptionStatus { get; set; }
-        public DateTime? LastUpdate { get; set; }
+        public DateTime LastUpdate { get; set; }
     }
 }
