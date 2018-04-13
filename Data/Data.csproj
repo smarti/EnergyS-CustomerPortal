@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BillDataBySQL.cs" />
+    <Compile Include="ContractDataBySQL.cs" />
     <Compile Include="CustomerDataBySQL.cs" />
     <Compile Include="DBContext.cs" />
     <Compile Include="MeterReadingDataBySQL.cs" />
