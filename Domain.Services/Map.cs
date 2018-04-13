@@ -123,8 +123,23 @@ namespace Domain.Models
                 City = address.City,
                 Country = address.Country
             };
-
+            
             return convertedAddress;
         }
+
+        public static MeterReadingModel MeterReadingToMeterReadingModel(MeterReading meterReading)
+        {
+            MeterReadingModel convertMeterReading = new MeterReadingModel()
+            {
+                MeterReadingId = meterReading.MeterReadingId,
+                CurrentReading = meterReading.CurrentReading,
+                LastUpdate = meterReading.LastUpdate,
+
+            };
+
+            return convertMeterReading;
+
+        }
+        
     }
 }

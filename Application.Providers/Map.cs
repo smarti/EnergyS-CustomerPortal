@@ -131,5 +131,18 @@ namespace Application.Providers
 
             return convertedBill;
         }
+
+        public static MeterReadingViewModel MeterReadingModelToMeterReadingViewModel(MeterReadingModel meterReadingViewModel)
+        {
+            MeterReadingViewModel convertedMeterReading = new MeterReadingViewModel
+            {
+                MeterReadingId = meterReadingViewModel.MeterReadingId,
+                CurrentReading = meterReadingViewModel.CurrentReading,
+                LastUpdate = meterReadingViewModel.LastUpdate,
+
+            };
+
+            return convertedMeterReading;
+        }
     }
 }
