@@ -33,5 +33,13 @@ namespace Domain.Services
 
             return convertedReports;
         }
+
+        public void CreateReportByCustomer(CustomerModel customer, ReportModel report)
+        {
+            Report convertedReport = Map.ReportModelToReport(report);
+            convertedReport.Customer = Map.CustomerModelToCustomer(customer);
+
+            _data.CreateReport(convertedReport);
+        }
     }
 }
