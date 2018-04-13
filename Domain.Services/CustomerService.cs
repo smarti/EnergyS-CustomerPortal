@@ -23,5 +23,17 @@ namespace Domain.Services
         {
             return Map.CustomerToCustomerModel(_data.GetCustomerById(customerId));
         }
+
+        public int CheckCustomerLogin(string eMail, string password)
+        {
+            CustomerModel customer = Map.CustomerToCustomerModel(_data.GetCustomerByEMail(eMail));
+
+            if (password == customer.Password.PasswordHash)
+            {
+                return customer.CustomerId;
+            }
+
+            return 0;
+        }
     }
 }
