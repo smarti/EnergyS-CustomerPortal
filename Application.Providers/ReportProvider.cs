@@ -37,5 +37,14 @@ namespace Application.Providers
 
             return convertedReports;
         }
+
+        public void CreateReportByCustomerId(int customerId, ReportViewModel report)
+        {
+            CustomerService customerService = new CustomerService();
+            CustomerViewModel customer =
+                Map.CustomerModelToCustomerViewModel(customerService.GetCustomerById(customerId));
+
+            _service.CreateReportByCustomer(Map.CustomerViewModelToCustomerModel(customer), Map.ReportViewModelToReportModel(report));
+        }
     }
 }
