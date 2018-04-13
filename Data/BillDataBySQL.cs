@@ -19,14 +19,7 @@ namespace Data
         {
             List<Bill> bills = new List<Bill>();
 
-            foreach (Bill bill in Context.Bills)
-            {
-                if (bill.Customer == customer)
-                {
-                    bills.Add(bill);
-                }
-                
-            }
+            bills.AddRange(Context.Bills.Where(bill => bill.Customer.CustomerId == customer.CustomerId));
 
             return bills;
         }
