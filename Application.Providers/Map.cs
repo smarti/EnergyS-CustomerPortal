@@ -157,5 +157,19 @@ namespace Application.Providers
 
             return convertedMeterReading;
         }
+
+        public static ContractViewModel ContractModelToContractViewModel(ContractModel contractViewModel)
+        {
+            ContractViewModel convertContract = new ContractViewModel()
+            {
+                ContractId = contractViewModel.ContractId,
+                Description = contractViewModel.Description,
+                ContractStatus = contractViewModel.ContractStatus,
+                LastUpdate = contractViewModel.LastUpdate,
+
+            };
+
+            return convertContract;
+        }
     }
 }

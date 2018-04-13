@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Models
+namespace Application.ViewModels
 {
-    public class ContractModel
+    public class ContractViewModel
     {
         public int ContractId { get; set; }
 
