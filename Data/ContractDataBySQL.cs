@@ -26,11 +26,11 @@ namespace Data
 
         public void CreateContract(Contract contract)
         {
-            contract.Customer = Context.Customers.Find(contract.Customer.CustomerId);
+            contract.Customer = _context.Customers.Find(contract.Customer.CustomerId);
 
-            Context.Contracts.Add(contract);
+            _context.Contracts.Add(contract);
 
-            Context.SaveChangesAsync();
+            _context.SaveChangesAsync();
         }
     }
 }
