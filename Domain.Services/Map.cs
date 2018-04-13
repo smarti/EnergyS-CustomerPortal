@@ -21,7 +21,7 @@ namespace Domain.Models
             return convertedCustomer;
         }
 
-        private static Password PasswordModelToPassword(PasswordModel password)
+        public static Password PasswordModelToPassword(PasswordModel password)
         {
             Password convertedPassword = new Password
             {

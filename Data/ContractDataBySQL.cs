@@ -9,17 +9,17 @@ namespace Data
 {
     public class ContractDataBySQL
     {
-        private readonly DBContext Context;
+        private readonly DBContext _context;
 
         public ContractDataBySQL(DBContext context)
         {
-            Context = context;
+            _context = context;
         }
         public List<Contract> GetAllContractsByCustomer(Customer customer)
         {
             List<Contract> contracts = new List<Contract>();
 
-            contracts.AddRange(Context.Contracts.Where(contract => contract.Customer.CustomerId == customer.CustomerId));
+            contracts.AddRange(_context.Contracts.Where(contract => contract.Customer.CustomerId == customer.CustomerId));
 
             return contracts;
         }

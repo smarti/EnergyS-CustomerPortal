@@ -25,5 +25,12 @@ namespace CustomerPortal.API.Controllers
 
             return customer;
         }
+
+        [Route("changePassword")]
+        [HttpPost]
+        public void ChangeCustomerPassword(int customerId, string oldPassword, string newPassword)
+        {
+            _provider.ChangeCustomerPassword(customerId, oldPassword, newPassword);
+        }
     }
 }
