@@ -126,5 +126,18 @@ namespace Domain.Models
 
             return convertedAddress;
         }
+
+        public static Report ReportModelToReport(ReportModel report)
+        {
+            Report convertedReport = new Report()
+            {
+                ReportId = report.ReportId,
+                Description = report.Description,
+                DescriptionStatus = report.DescriptionStatus,
+                LastUpdate = report.LastUpdate
+            };
+
+            return convertedReport;
+        }
     }
 }

@@ -10,13 +10,13 @@ namespace Application.Providers
 {
     public static class Map
     {
-        public static ReportViewModel ReportModelToReportViewModel(ReportModel reportModel)
+        public static ReportViewModel ReportModelToReportViewModel(ReportModel report)
         {
             ReportViewModel convertedReportModel = new ReportViewModel
             {
-                Description = reportModel.Description,
-                DescriptionStatus = reportModel.DescriptionStatus,
-                LastUpdate = reportModel.LastUpdate
+                Description = report.Description,
+                DescriptionStatus = report.DescriptionStatus,
+                LastUpdate = report.LastUpdate
             };
 
             return convertedReportModel;
@@ -130,6 +130,18 @@ namespace Application.Providers
             };
 
             return convertedBill;
+        }
+
+        public static ReportModel ReportViewModelToReportModel(ReportViewModel report)
+        {
+            ReportModel convertedReport = new ReportModel
+            {
+                Description = report.Description,
+                DescriptionStatus = report.DescriptionStatus,
+                LastUpdate = report.LastUpdate
+            };
+
+            return convertedReport;
         }
     }
 }
