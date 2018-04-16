@@ -14,6 +14,10 @@
     });
 
 })(window.angular);
+const environment = {
+    production: false,
+    apiUrl: 'http://localhost:60074/api/'
+};
 (function (angular) {
     "use strict";
 
@@ -31,7 +35,7 @@
         $urlRouterProvider.otherwise('/login/');
 
         const loginState = {
-            url: '/login/:username',
+            url: '/login/:customerId',
             templateUrl: 'Partials/pages/login.html',
             controller: 'LoginController',
             controllerAs: 'loginCtrl'
@@ -53,7 +57,7 @@
         };
 
         const dashboardState = {
-            url: '/dashboard',
+            url: '/dashboard/:customerId',
             templateUrl: 'Partials/pages/dashboard.html'
         };
 
@@ -90,16 +94,16 @@
         .module('CustomerPortalApp')
         .controller('LoginController', loginController);
 
-    loginController.$inject = ['$scope', '$state'];
+    loginController.$inject = ['$scope', '$state', '$http' ];
 
-    function loginController($scope, $state) {
+    function loginController($scope, $state, $http) {
         var vm = this;
 
         vm.forms = {};
         vm.currentForm = 'login';
 
         vm.data = {
-            Username: $state.params.username || '',
+            EMail: '',
             Password: '',
             CurrentPassword: '',
             newPassword: '',
@@ -126,15 +130,38 @@
             if (!vm.isFormValid())
                 return;
 
-            // API CALL Login
-            //$state.go('login', { username: "NEE@NIETDOEN.PLS" });
+            var requestData = {
+                eMail: this.EMail,
+                password: this.Password
+            };
+
+            var result = $http({
+                method: 'post',
+                url: environment.apiUrl + 'customers/login',
+                data: requestData
+            });
+
+            if (result === 0)
+                return;
+
+            $state.go('dashboard', { customerId: result });
         };
 
         vm.changePassword = function () {
             if (newPassword !== newPasswordConfirm)
                 return;
 
-            //API CALL ChangePassword
+            var requestData = {
+                customerId: this.customerId,
+                oldPassword: this.CurrentPassword,
+                newPassword: this.newPassword
+            };
+
+            $http({
+                method: 'post',
+                url: environment.apiUrl + 'customers/changePassword',
+                data: requestData
+            });
         };
 
         vm.showForm = function (formName) {

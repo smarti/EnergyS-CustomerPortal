@@ -27,6 +27,9 @@ namespace Data
 
             customers.AddRange(_context.Customers.Where(x => x.EMail == eMail));
 
+            if (customers.Count == 0)
+                return null;
+
             return customers[0];
         }
     }

@@ -26,12 +26,13 @@ namespace Domain.Services
 
         public int CheckCustomerLogin(string eMail, string password)
         {
-            CustomerModel customer = Map.CustomerToCustomerModel(_data.GetCustomerByEMail(eMail));
+            if (_data.GetCustomerByEMail(eMail) == null)
+                return 0;
 
-            if (password == customer.Password.PasswordHash)
-            {
+            CustomerModel customer = Map.CustomerToCustomerModel(_data.GetCustomerByEMail(eMail)); 
+
+            if (customer != null && password == customer.Password.PasswordHash)
                 return customer.CustomerId;
-            }
 
             return 0;
         }

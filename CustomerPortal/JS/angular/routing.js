@@ -15,7 +15,7 @@
         $urlRouterProvider.otherwise('/login/');
 
         const loginState = {
-            url: '/login/:username',
+            url: '/login/:customerId',
             templateUrl: 'Partials/pages/login.html',
             controller: 'LoginController',
             controllerAs: 'loginCtrl'
@@ -37,7 +37,7 @@
         };
 
         const dashboardState = {
-            url: '/dashboard',
+            url: '/dashboard/:customerId',
             templateUrl: 'Partials/pages/dashboard.html'
         };
 
