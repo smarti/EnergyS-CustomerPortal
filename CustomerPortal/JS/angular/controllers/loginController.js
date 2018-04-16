@@ -19,7 +19,7 @@
             CurrentPassword: '',
             newPassword: '',
             newPasswordConfirm: ''
-        }
+        };
 
         /**
          * Check if the login form is valid.
