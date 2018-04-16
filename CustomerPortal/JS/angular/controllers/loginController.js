@@ -5,7 +5,7 @@
         .module('CustomerPortalApp')
         .controller('LoginController', loginController);
 
-    loginController.$inject = ['$scope', '$state', '$http' ];
+    loginController.$inject = ['$scope', '$state', '$http'];
 
     function loginController($scope, $state, $http) {
         var vm = this;
@@ -41,21 +41,27 @@
             if (!vm.isFormValid())
                 return;
 
-            var requestData = {
-                eMail: this.EMail,
-                password: this.Password
+            const requestData = {
+                eMail: vm.data.EMail,
+                password: vm.data.Password
             };
 
-            var result = $http({
+            $http({
                 method: 'post',
                 url: environment.apiUrl + 'customers/login',
                 data: requestData
-            });
+            })
+                .then(function (result) {
+                    console.log(result.data);
+                });
 
-            if (result === 0)
-                return;
+            console.log("test");
+            //console.log(resultData);
 
-            $state.go('dashboard', { customerId: result });
+            //if (result === 0)
+            //    return;
+
+            //$state.go('dashboard', { customerId: result });
         };
 
         vm.changePassword = function () {
@@ -63,9 +69,9 @@
                 return;
 
             var requestData = {
-                customerId: this.customerId,
-                oldPassword: this.CurrentPassword,
-                newPassword: this.newPassword
+                customerId: $state.params.customerId,
+                oldPassword: vm.data.oldPassword,
+                newPassword: vm.data.newPassword
             };
 
             $http({
@@ -77,12 +83,12 @@
 
         vm.showForm = function (formName) {
             switch (formName) {
-            case 'changePassword':
-            case 'login':
-                vm.currentForm = formName;
-                break;
-            default:
-                throw new TypeError('Expected form name to be "changePassword" or "login".' + formName);
+                case 'changePassword':
+                case 'login':
+                    vm.currentForm = formName;
+                    break;
+                default:
+                    throw new TypeError('Expected form name to be "changePassword" or "login".' + formName);
             }
         };
     }
