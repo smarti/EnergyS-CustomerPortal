@@ -1,0 +1,115 @@
+﻿<div class="container-fluid">
+    <div class="col-xs-4 col-xs-offset-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h1 class="panel-title">Log in</h1>
+            </div>
+            <div class="panel-body">
+                <form name="loginCtrl.forms.login" novalidate ng-if="loginCtrl.currentForm === 'login'">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <b>Email:</b>
+                                <div class="input-group">
+                                    <input type="email"
+                                           class="form-control"
+                                           name="Email"
+                                           ng-model="loginCtrl.data.Username"
+                                           ng-minlength="4"
+                                           ng-required="true"
+                                           placeholder="Gebruikersnaam" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <b>Wachtwoord:</b>
+                                <div class="input-group">
+                                    <input type="password"
+                                           class="form-control"
+                                           name="Password"
+                                           ng-model="loginCtrl.data.Password"
+                                           ng-required="true" placeholder="Wachtwoord" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <form name="loginCtrl.forms.changePassword" novalidate ng-if="loginCtrl.currentForm === 'changePassword'">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <b>Huidig wachtwoord:</b>
+                                <div class="input-group">
+                                    <input type="password"
+                                           class="form-control"
+                                           name="CurrentPassword"
+                                           ng-model="loginCtrl.data.CurrentPassword"
+                                           ng-required="true"
+                                           placeholder="Huidig wachtwoord" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <b>Nieuw wachtwoord:</b>
+                                <div class="input-group">
+                                    <input type="password"
+                                           class="form-control"
+                                           name="CurrentPassword"
+                                           ng-model="loginCtrl.data.NewPassword"
+                                           ng-required="true"
+                                           placeholder="Huidig wachtwoord" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <b>Herhaal nieuw wachtwoord:</b>
+                                <div class="input-group">
+                                    <input type="password"
+                                           class="form-control"
+                                           name="NewPassword"
+                                           ng-model="loginCtrl.data.NewPasswordConfirm"
+                                           ng-required="true" placeholder="Nieuw wachtwoord" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="panel-footer" ng-if="loginCtrl.currentForm === 'login'">
+                <span>
+                    <button class="btn btn-success"
+                            type="button"
+                            ng-disabled="!loginCtrl.isFormValid()"
+                            ng-click="loginCtrl.login()">
+                        Log in
+                    </button>
+                    <button class="btn btn-default"
+                            type="button"
+                            ng-click="loginCtrl.showForm('changePassword')"
+                            ng-if="loginCtrl.currentForm === 'login'">
+                        Verander wachtwoord
+                    </button>
+                </span>
+            </div>
+            <div class="panel-footer" ng-if="loginCtrl.currentForm === 'changePassword'">
+                <span>
+                    <button class="btn btn-success"
+                            type="button"
+                            ng-disabled="!loginCtrl.isFormValid()"
+                            ng-click="loginCtrl.changePassword()">
+                        Wijzig
+                    </button>
+                    <button class="btn btn-default"
+                            type="button"
+                            ng-click="loginCtrl.showForm('login')">
+                        Ik weet het weer!
+                    </button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
