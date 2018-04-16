@@ -59,7 +59,7 @@
         };
 
         vm.changePassword = function () {
-            if (newPassword !== newPasswordConfirm)
+            if (vm.data.newPassword !== vm.data.newPasswordConfirm)
                 return;
 
             var requestData = {

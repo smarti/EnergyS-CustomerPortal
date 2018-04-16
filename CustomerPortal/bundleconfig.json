@@ -3,10 +3,7 @@
     "outputFileName": "Js/export/app.js",
     "inputFiles": [
       "Js/angular/*.js",
-      "Js/angular/controllers/*.js",
-      "Js/angular/directives/*.js",
-      "Js/angular/factories/*.js",
-      "Js/angular/providers/*.js"
+      "Js/angular/controllers/*.js"
     ]
   },
   {
