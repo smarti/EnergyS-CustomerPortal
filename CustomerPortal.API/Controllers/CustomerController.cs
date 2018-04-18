@@ -32,9 +32,9 @@ namespace CustomerPortal.API.Controllers
 
         [Route("changePassword")]
         [HttpPost]
-        public void ChangeCustomerPassword(int customerId, string oldPassword, string newPassword)
+        public void ChangeCustomerPassword([FromBody] ChangePasswordDTO changePasswordDTO)
         {
-            _provider.ChangeCustomerPassword(customerId, oldPassword, newPassword);
+            _provider.ChangeCustomerPassword(changePasswordDTO.CustomerId, changePasswordDTO.OldPassword, changePasswordDTO.NewPassword);
         }
     }
 }

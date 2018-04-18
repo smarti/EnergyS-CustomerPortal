@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="AddressViewModel.cs" />
     <Compile Include="BillViewModel.cs" />
+    <Compile Include="ChangePasswordDTO.cs" />
     <Compile Include="ContractViewModel.cs" />
     <Compile Include="CustomerViewModel.cs" />
     <Compile Include="MeterReadingViewModel.cs" />
