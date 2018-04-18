@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using Application.Providers;
+using Application.ViewModels;
 
 namespace CustomerPortal.API.Controllers
 {
+
+    [EnableCors("*", "*", "*")]
     [RoutePrefix("api/customers")]
     public class CustomerController : ApiController
     {
@@ -19,11 +23,11 @@ namespace CustomerPortal.API.Controllers
 
         [Route("login")]
         [HttpPost]
-        public int CheckCustomerLogin(string eMail, string password)
+        public int CheckCustomerLogin([FromBody] NamePasswordDTO namePasswordDTO)
         {
-            int customer = _provider.CheckCustomerLogin(eMail, password);
+            int customerId = _provider.CheckCustomerLogin(namePasswordDTO.EMail, namePasswordDTO.Password);
 
-            return customer;
+            return customerId;
         }
 
         [Route("changePassword")]

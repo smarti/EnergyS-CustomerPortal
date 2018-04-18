@@ -45,6 +45,7 @@
     <Compile Include="ContractViewModel.cs" />
     <Compile Include="CustomerViewModel.cs" />
     <Compile Include="MeterReadingViewModel.cs" />
+    <Compile Include="NamePasswordDTO.cs" />
     <Compile Include="PasswordViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportViewModel.cs" />

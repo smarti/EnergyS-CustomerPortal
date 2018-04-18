@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using Application.Providers;
 using Application.ViewModels;
 
 namespace CustomerPortal.API.Controllers
 {
-
+    [EnableCors("*", "*", "*")]
     [RoutePrefix("api/reports")]
     public class ReportController : ApiController
     {

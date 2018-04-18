@@ -52,16 +52,14 @@
                 data: requestData
             })
                 .then(function (result) {
+                    if (result.data === 0) {
+                        console.log("result was 0");
+                        return;
+                    }
+
                     console.log(result.data);
+                    $state.go('dashboard', { customerId: result.data });
                 });
-
-            console.log("test");
-            //console.log(resultData);
-
-            //if (result === 0)
-            //    return;
-
-            //$state.go('dashboard', { customerId: result });
         };
 
         vm.changePassword = function () {
