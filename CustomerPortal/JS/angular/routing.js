@@ -22,31 +22,33 @@
         };
 
         const billsState = {
-            url: '/bills',
+            url: '/bills/:customerId',
             templateUrl: 'Partials/pages/bills.html'
         };
 
         const contractsState = {
-            url: '/contracts',
+            url: '/contracts/:customerId',
             templateUrl: 'Partials/pages/contracts.html'
         };
 
         const reportsState = {
-            url: '/reports',
+            url: '/reports/:customerId',
             templateUrl: 'Partials/pages/reports.html'
         };
 
         const dashboardState = {
             url: '/dashboard/:customerId',
-            templateUrl: 'Partials/pages/dashboard.html'
+            templateUrl: 'Partials/pages/dashboard.html',
+            controller: 'DashboardController',
+            controlleras: 'dashboardCtrl'
         };
 
         $stateProvider
-                .state('login', loginState)
-                .state('bills', billsState)
-                .state('contracts', contractsState)
-                .state('reports', reportsState)
-                .state('dashboard', dashboardState)
+            .state('login', loginState)
+            .state('bills', billsState)
+            .state('contracts', contractsState)
+            .state('reports', reportsState)
+            .state('dashboard', dashboardState)
             ;
     }
 
