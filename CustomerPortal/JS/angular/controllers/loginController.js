@@ -14,6 +14,7 @@
         vm.currentForm = 'login';
 
         vm.data = {
+            customerId: '' || $state.params.customerId,
             EMail: '',
             Password: '',
             CurrentPassword: '',
@@ -63,11 +64,13 @@
         };
 
         vm.changePassword = function () {
-            if (vm.data.newPassword !== vm.data.newPasswordConfirm)
+            if (vm.data.newPassword !== vm.data.newPasswordConfirm) {
+                console.log("passwords did not match");
                 return;
+            }
 
             var requestData = {
-                customerId: $state.params.customerId,
+                customerId: vm.data.customerId,
                 oldPassword: vm.data.oldPassword,
                 newPassword: vm.data.newPassword
             };
