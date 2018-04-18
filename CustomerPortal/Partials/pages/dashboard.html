@@ -1,70 +1,85 @@
-﻿    <div class="container-fluid">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <p>Meterstand</p>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <a ui-sref="bills">Facturen</a>
-            </div>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Datum</th>
-                        <th>bedrag</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1 januari 1970</td>
-                        <td>€ 0,00</td>
-                        <td class="text-success">Geen actie vereist</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <a ui-sref="reports">Meldingen</a>
-            </div>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Datum</th>
-                        <th>Soort</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1 januari 1970</td>
-                        <td>Verhuizing</td>
-                        <td class="text-success">Geen actie vereist</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <a ui-sref="contracts">Contracten</a>
-            </div>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Naam</th>
-                        <th>Kosten</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Test</td>
-                        <td>€ 0,00 per maand</td>
-                        <td class="text-success">Geen actie vereist</td>
-                    </tr>
-                </tbody>
-            </table>
+﻿<div class="container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <p>Meterstand</p>
         </div>
     </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a ui-sref="bills">Facturen</a>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Datum</th>
+                    <th>bedrag</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr ng-if="dashboardCtrl.data.bills === ''">
+                <td>1 januari 1970</td>
+                <td>€ 0,00</td>
+                <td class="text-success">Geen actie vereist</td>
+            </tr>
+            <tr ng-repeat="bill in dashboardCtrl.data.bills">
+                <td>{{bill.LastUpdate}}</td>
+                <td>{{bill.Amount}}</td>
+                <td>{{bill.PaymentStatus}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a ui-sref="reports">Meldingen</a>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Datum</th>
+                    <th>Soort</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr ng-if="dashboardCtrl.data.reports === ''">
+                <td>1 januari 1970</td>
+                <td>Verhuizing</td>
+                <td class="text-success">Geen actie vereist</td>
+            </tr>
+            <tr ng-repeat="report in dashboardCtrl.data.reports">
+                <td>{{report.LastUpdate}}</td>
+                <td>Melding</td>
+                <td>{{report.DescriptionStatus}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a ui-sref="contracts">Contracten</a>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Datum</th>
+                    <th>Omschrijving</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr ng-if="dashboardCtrl.data.contracts === ''">
+                <td>Test</td>
+                <td>€ 0,00 per maand</td>
+                <td class="text-success">Geen actie vereist</td>
+            </tr>
+            <tr ng-repeat="contract in dashboardCtrl.data.contracts">
+                <td>{{contract.LastUpdate}}</td>
+                <td>{{contract.Description}}</td>
+                <td>{{contract.ContractStatus}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

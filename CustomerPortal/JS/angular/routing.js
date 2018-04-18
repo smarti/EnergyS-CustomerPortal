@@ -40,7 +40,7 @@
             url: '/dashboard/:customerId',
             templateUrl: 'Partials/pages/dashboard.html',
             controller: 'DashboardController',
-            controlleras: 'dashboardCtrl'
+            controllerAs: 'dashboardCtrl'
         };
 
         $stateProvider
