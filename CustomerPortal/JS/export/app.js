@@ -42,31 +42,33 @@ const environment = {
         };
 
         const billsState = {
-            url: '/bills',
+            url: '/bills/:customerId',
             templateUrl: 'Partials/pages/bills.html'
         };
 
         const contractsState = {
-            url: '/contracts',
+            url: '/contracts/:customerId',
             templateUrl: 'Partials/pages/contracts.html'
         };
 
         const reportsState = {
-            url: '/reports',
+            url: '/reports/:customerId',
             templateUrl: 'Partials/pages/reports.html'
         };
 
         const dashboardState = {
             url: '/dashboard/:customerId',
-            templateUrl: 'Partials/pages/dashboard.html'
+            templateUrl: 'Partials/pages/dashboard.html',
+            controller: 'DashboardController',
+            controlleras: 'dashboardCtrl'
         };
 
         $stateProvider
-                .state('login', loginState)
-                .state('bills', billsState)
-                .state('contracts', contractsState)
-                .state('reports', reportsState)
-                .state('dashboard', dashboardState)
+            .state('login', loginState)
+            .state('bills', billsState)
+            .state('contracts', contractsState)
+            .state('reports', reportsState)
+            .state('dashboard', dashboardState)
             ;
     }
 
@@ -92,6 +94,24 @@ const environment = {
 
     angular
         .module('CustomerPortalApp')
+        .controller('DashboardController', dashboardController);
+
+    dashboardController.$inject = ['$scope', '$state', '$http'];
+
+    function dashboardController($scope, $state, $http) {
+        var vm = this;
+
+        vm.data = {
+            customerId: '' || $state.params.customerId
+        };
+    }
+
+})(window.angular);
+(function (angular) {
+    "use strict";
+
+    angular
+        .module('CustomerPortalApp')
         .controller('LoginController', loginController);
 
     loginController.$inject = ['$scope', '$state', '$http'];
@@ -103,6 +123,7 @@ const environment = {
         vm.currentForm = 'login';
 
         vm.data = {
+            customerId: '' || $state.params.customerId,
             EMail: '',
             Password: '',
             CurrentPassword: '',
@@ -152,11 +173,13 @@ const environment = {
         };
 
         vm.changePassword = function () {
-            if (vm.data.newPassword !== vm.data.newPasswordConfirm)
+            if (vm.data.newPassword !== vm.data.newPasswordConfirm) {
+                console.log("passwords did not match");
                 return;
+            }
 
             var requestData = {
-                customerId: $state.params.customerId,
+                customerId: vm.data.customerId,
                 oldPassword: vm.data.oldPassword,
                 newPassword: vm.data.newPassword
             };

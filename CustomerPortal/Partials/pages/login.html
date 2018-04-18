@@ -99,7 +99,8 @@
                 <span>
                     <button class="btn btn-success"
                             type="button"
-                            ng-click="loginCtrl.changePassword()">
+                            ng-click="loginCtrl.changePassword()"
+                            ng-disabled="loginCtrl.data.customerId === ''">
                         Wijzig
                     </button>
                     <button class="btn btn-default"
