@@ -22,17 +22,28 @@
     </div>
 </nav>
 <div class="container-fluid">
-    <div class="panel panel-default">
-        <table class="table">
-            <thead>
+    <div class="col-xs-3">
+        <button class="btn btn-default"
+                type="button"
+                ng-click="reportCtrl.showForm('addReport')"
+                ng-if="reportCtrl.currentForm === 'showReports'">
+            Nieuwe melding
+        </button>
+    </div>
+</div>
+<form name="reportCtrl.forms.showReports" novalidate ng-if="reportCtrl.currentForm === 'showReports'">
+    <div class="container-fluid">
+        <div class="panel panel-default">
+            <table class="table">
+                <thead>
                 <tr>
                     <th>Datum</th>
                     <th>soort</th>
                     <th>Status</th>
                     <th></th>
                 </tr>
-            </thead>
-            <tbody>
+                </thead>
+                <tbody>
                 <tr ng-if="reportctrl.data.reports === ''">
                     <td>1 januari 1970</td>
                     <td>Verhuizing</td>
@@ -43,7 +54,15 @@
                     <td>Melding</td>
                     <td>{{report.DescriptionStatus}}</td>
                 </tr>
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
+</form>
+<form name="reportCtrl.forms.addReport" novalidate ng-if="reportCtrl.currentForm === 'addReport'">
+    <p>Omschrijving:</p>
+    <textarea ng-model="reportCtrl.data.reportDescription"></textarea>
+    <button class="btn btn-default"
+            type="button"
+            ng-click="reportCtrl.addReport()">Verstuur melding</button>
+</form>

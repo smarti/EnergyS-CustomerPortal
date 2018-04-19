@@ -30,17 +30,14 @@ namespace CustomerPortal.API.Controllers
         }
 
         [HttpPost]
-        [Route("add")]
-        public void CreateReportByCustomerId(int customerId, string description)
+        [Route("add/{customerId}")]
+        public void CreateReportByCustomerId(int customerId, [FromBody] ReportViewModel reportViewModel)
         {
-            ReportViewModel report = new ReportViewModel
-            {
-                DescriptionStatus = "Nieuw",
-                Description = description,
-                LastUpdate = DateTime.Now
-            };
+            reportViewModel.DescriptionStatus = "Nieuw";
+            reportViewModel.LastUpdate = DateTime.Now;
 
-            _provider.CreateReportByCustomerId(customerId, report);
+            _provider.CreateReportByCustomerId(customerId, reportViewModel);
+
         }
     }
 }
