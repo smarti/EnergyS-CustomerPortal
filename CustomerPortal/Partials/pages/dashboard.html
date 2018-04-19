@@ -32,7 +32,7 @@
     </div>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <a ui-sref="reports">Meldingen</a>
+            <a ui-sref="reports({customerId: '{{dashboardCtrl.data.customerId}}'})">Meldingen</a>
         </div>
         <table class="table">
             <thead>
@@ -58,7 +58,7 @@
     </div>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <a ui-sref="contracts">Contracten</a>
+            <a ui-sref="contracts({customerId: '{{dashboardCtrl.data.customerId}}'})">Contracten</a>
         </div>
         <table class="table">
             <thead>
