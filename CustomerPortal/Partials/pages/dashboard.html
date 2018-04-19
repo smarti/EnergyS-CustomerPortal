@@ -3,6 +3,9 @@
         <div class="panel-heading">
             <p>Meterstand</p>
         </div>
+        <div>
+            <p ng-repeat="meterReading in dashboardCtrl.data.meterReadings">{{meterReading.CurrentReading}}Kwh</p>
+        </div>
     </div>
     <div class="panel panel-default">
         <div class="panel-heading">

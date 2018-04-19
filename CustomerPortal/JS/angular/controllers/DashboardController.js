@@ -14,33 +14,43 @@
             customerId: '' || $state.params.customerId,
             bills: '',
             reports: '',
-            contracts: ''
+            contracts: '',
+            meterReadings: ''
         };
 
-        vm.getBills = function() {
+        vm.getMeterReadings = function () {
+            $http.get(environment.apiUrl + vm.data.customerId + "/meterReadings")
+                .then(function (result) {
+                    vm.data.meterReadings = result.data;
+                    console.log(result.data);
+                });
+        };
+
+        vm.getBills = function () {
             $http.get(environment.apiUrl + vm.data.customerId + "/bills")
-                .then(function(result) {
+                .then(function (result) {
                     vm.data.bills = result.data;
                     console.log(result.data);
                 });
         };
 
-        vm.getReports = function() {
+        vm.getReports = function () {
             $http.get(environment.apiUrl + "/reports/all/" + vm.data.customerId)
-                .then(function(result) {
+                .then(function (result) {
                     vm.data.reports = result.data;
                     console.log(result.data);
                 });
         };
 
-        vm.getContracts = function() {
+        vm.getContracts = function () {
             $http.get(environment.apiUrl + "/contracts/all/" + vm.data.customerId)
-                .then(function(result) {
+                .then(function (result) {
                     vm.data.contracts = result.data;
                     console.log(result.data);
                 });
         };
 
+        vm.getMeterReadings();
         vm.getBills();
         vm.getReports();
         vm.getContracts();
