@@ -37,7 +37,9 @@
 
         const reportsState = {
             url: '/reports/:customerId',
-            templateUrl: 'Partials/pages/reports.html'
+            templateUrl: 'Partials/pages/reports.html',
+            controller: 'ReportController',
+            controllerAs: 'reportCtrl'
         };
 
         const dashboardState = {

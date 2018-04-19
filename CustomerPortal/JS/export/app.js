@@ -57,7 +57,9 @@ const environment = {
 
         const reportsState = {
             url: '/reports/:customerId',
-            templateUrl: 'Partials/pages/reports.html'
+            templateUrl: 'Partials/pages/reports.html',
+            controller: 'ReportController',
+            controllerAs: 'reportCtrl'
         };
 
         const dashboardState = {
@@ -294,6 +296,37 @@ const environment = {
                     throw new TypeError('Expected form name to be "changePassword" or "login".' + formName);
             }
         };
+    }
+
+})(window.angular);
+(function (angular) {
+    "use strict";
+
+    angular
+        .module('CustomerPortalApp')
+        .controller('ReportController', reportController);
+
+    reportController.$inject = ['$scope', '$state', '$http'];
+
+    function reportController($scope, $state, $http) {
+        var vm = this;
+
+        vm.data = {
+            customerId: '' || $state.params.customerId,
+            bills: '',
+            reports: '',
+            contracts: ''
+        };
+
+        vm.getReports = function () {
+            $http.get(environment.apiUrl + "/reports/all/" + vm.data.customerId)
+                .then(function (result) {
+                    vm.data.reports = result.data;
+                    console.log(result.data);
+                });
+        };
+
+        vm.getReports();
     }
 
 })(window.angular);
