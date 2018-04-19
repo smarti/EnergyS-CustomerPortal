@@ -23,7 +23,9 @@
 
         const billsState = {
             url: '/bills/:customerId',
-            templateUrl: 'Partials/pages/bills.html'
+            templateUrl: 'Partials/pages/bills.html',
+            controller: 'BillController',
+            controllerAs: 'billCtrl'
         };
 
         const contractsState = {

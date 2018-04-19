@@ -33,12 +33,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1 januari 1970</td>
-                        <td>€ 0,00</td>
-                        <td class="text-success">Geen actie vereist</td>
-                        <td><a href="#">Meer informatie</a></td>
-                    </tr>
+                <tr ng-if="billCtrl.data.bills === ''">
+                    <td>1 januari 1970</td>
+                    <td>€ 0,00</td>
+                    <td class="text-success">Geen actie vereist</td>
+                </tr>
+                <tr ng-repeat="bill in billCtrl.data.bills">
+                    <td>{{bill.LastUpdate}}</td>
+                    <td>{{bill.Amount}}</td>
+                    <td>{{bill.PaymentStatus}}</td>
+                </tr>
                 </tbody>
             </table>
         </div>
