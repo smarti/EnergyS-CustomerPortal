@@ -28,7 +28,9 @@
 
         const contractsState = {
             url: '/contracts/:customerId',
-            templateUrl: 'Partials/pages/contracts.html'
+            templateUrl: 'Partials/pages/contracts.html',
+            controller: 'ContractController',
+            controllerAs: 'contractCtrl'
         };
 
         const reportsState = {
