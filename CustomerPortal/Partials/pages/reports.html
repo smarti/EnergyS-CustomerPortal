@@ -1,4 +1,27 @@
-﻿<div class="container-fluid">
+﻿<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a ui-sref="dashboard({customerId: '{{reportCtrl.data.customerId}}' })">Dashboard</a></li>
+                    <li><a ui-sref="contracts({customerId: '{{reportCtrl.data.customerId}}' })">Contracten</a></li>
+                    <li><a ui-sref="bills({customerId: '{{reportCtrl.data.customerId}}' })">Facturen</a></li>
+                    <li><a ui-sref="reports({customerId: '{{reportCtrl.data.customerId}}' })">Meldingen</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li><a ui-sref="login({customerId: '{{reportCtrl.data.customerId}}' })">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid">
     <div class="panel panel-default">
         <table class="table">
             <thead>

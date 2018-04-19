@@ -1,4 +1,27 @@
-﻿<div class="container-fluid">
+﻿<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a ui-sref="dashboard({customerId: '{{dashboardCtrl.data.customerId}}' })">Dashboard</a></li>
+                    <li><a ui-sref="contracts({customerId: '{{dashboardCtrl.data.customerId}}' })">Contracten</a></li>
+                    <li><a ui-sref="bills({customerId: '{{dashboardCtrl.data.customerId}}' })">Facturen</a></li>
+                    <li><a ui-sref="reports({customerId: '{{dashboardCtrl.data.customerId}}' })">Meldingen</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li><a ui-sref="login({customerId: '{{dashboardCtrl.data.customerId}}' })">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid">
     <div class="panel panel-default">
         <div class="panel-heading">
             <p>Meterstand</p>
@@ -20,16 +43,16 @@
                 </tr>
             </thead>
             <tbody>
-            <tr ng-if="dashboardCtrl.data.bills === ''">
-                <td>1 januari 1970</td>
-                <td>€ 0,00</td>
-                <td class="text-success">Geen actie vereist</td>
-            </tr>
-            <tr ng-repeat="bill in dashboardCtrl.data.bills">
-                <td>{{bill.LastUpdate}}</td>
-                <td>{{bill.Amount}}</td>
-                <td>{{bill.PaymentStatus}}</td>
-            </tr>
+                <tr ng-if="dashboardCtrl.data.bills === ''">
+                    <td>1 januari 1970</td>
+                    <td>€ 0,00</td>
+                    <td class="text-success">Geen actie vereist</td>
+                </tr>
+                <tr ng-repeat="bill in dashboardCtrl.data.bills">
+                    <td>{{bill.LastUpdate}}</td>
+                    <td>{{bill.Amount}}</td>
+                    <td>{{bill.PaymentStatus}}</td>
+                </tr>
             </tbody>
         </table>
     </div>
@@ -46,16 +69,16 @@
                 </tr>
             </thead>
             <tbody>
-            <tr ng-if="dashboardCtrl.data.reports === ''">
-                <td>1 januari 1970</td>
-                <td>Verhuizing</td>
-                <td class="text-success">Geen actie vereist</td>
-            </tr>
-            <tr ng-repeat="report in dashboardCtrl.data.reports">
-                <td>{{report.LastUpdate}}</td>
-                <td>Melding</td>
-                <td>{{report.DescriptionStatus}}</td>
-            </tr>
+                <tr ng-if="dashboardCtrl.data.reports === ''">
+                    <td>1 januari 1970</td>
+                    <td>Verhuizing</td>
+                    <td class="text-success">Geen actie vereist</td>
+                </tr>
+                <tr ng-repeat="report in dashboardCtrl.data.reports">
+                    <td>{{report.LastUpdate}}</td>
+                    <td>Melding</td>
+                    <td>{{report.DescriptionStatus}}</td>
+                </tr>
             </tbody>
         </table>
     </div>
@@ -72,16 +95,16 @@
                 </tr>
             </thead>
             <tbody>
-            <tr ng-if="dashboardCtrl.data.contracts === ''">
-                <td>Test</td>
-                <td>€ 0,00 per maand</td>
-                <td class="text-success">Geen actie vereist</td>
-            </tr>
-            <tr ng-repeat="contract in dashboardCtrl.data.contracts">
-                <td>{{contract.LastUpdate}}</td>
-                <td>{{contract.Description}}</td>
-                <td>{{contract.ContractStatus}}</td>
-            </tr>
+                <tr ng-if="dashboardCtrl.data.contracts === ''">
+                    <td>Test</td>
+                    <td>€ 0,00 per maand</td>
+                    <td class="text-success">Geen actie vereist</td>
+                </tr>
+                <tr ng-repeat="contract in dashboardCtrl.data.contracts">
+                    <td>{{contract.LastUpdate}}</td>
+                    <td>{{contract.Description}}</td>
+                    <td>{{contract.ContractStatus}}</td>
+                </tr>
             </tbody>
         </table>
     </div>
