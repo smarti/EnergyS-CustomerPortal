@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Data.Entities
 {
@@ -17,7 +13,5 @@ namespace Data.Entities
         public string City { get; set; }
         public string Country { get; set; }
         public DateTime LastUpdate { get; set; }
-
-       
     }
 }
