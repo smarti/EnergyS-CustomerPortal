@@ -16,7 +16,7 @@
 })(window.angular);
 const environment = {
     production: false,
-    apiUrl: 'http://localhost:60074/api/'
+    apiUrl: 'api/'
 };
 (function (angular) {
     "use strict";
