@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Application.ViewModels;
 using Domain.Models;
 using Domain.Services;
@@ -11,7 +7,7 @@ namespace Application.Providers
 {
     public class ContractProvider
     {
-        private ContractService _service;
+        private readonly ContractService _service;
 
         public ContractProvider()
         {
@@ -29,9 +25,7 @@ namespace Application.Providers
 
             List<ContractViewModel> convertedContracts = new List<ContractViewModel>();
             foreach (ContractModel contract in contracts)
-            {
                 convertedContracts.Add(Map.ContractModelToContractViewModel(contract));
-            }
 
             return convertedContracts;
         }
@@ -42,7 +36,8 @@ namespace Application.Providers
             CustomerViewModel customer =
                 Map.CustomerModelToCustomerViewModel(customerService.GetCustomerById(customerId));
 
-            _service.CreateContractByCustomer(Map.CustomerViewModelToCustomerModel(customer), Map.ContractViewModelToContractModel(contract));
+            _service.CreateContractByCustomer(Map.CustomerViewModelToCustomerModel(customer),
+                Map.ContractViewModelToContractModel(contract));
         }
     }
 }

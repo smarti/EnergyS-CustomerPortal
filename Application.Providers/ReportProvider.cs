@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Application.ViewModels;
 using Domain.Models;
 using Domain.Services;
@@ -11,7 +7,7 @@ namespace Application.Providers
 {
     public class ReportProvider
     {
-        private ReportService _service;
+        private readonly ReportService _service;
 
         public ReportProvider()
         {
@@ -30,10 +26,7 @@ namespace Application.Providers
 
             List<ReportViewModel> convertedReports = new List<ReportViewModel>();
 
-            foreach (ReportModel report in reports)
-            {
-                convertedReports.Add(Map.ReportModelToReportViewModel(report));
-            }
+            foreach (ReportModel report in reports) convertedReports.Add(Map.ReportModelToReportViewModel(report));
 
             return convertedReports;
         }
@@ -44,7 +37,8 @@ namespace Application.Providers
             CustomerViewModel customer =
                 Map.CustomerModelToCustomerViewModel(customerService.GetCustomerById(customerId));
 
-            _service.CreateReportByCustomer(Map.CustomerViewModelToCustomerModel(customer), Map.ReportViewModelToReportModel(report));
+            _service.CreateReportByCustomer(Map.CustomerViewModelToCustomerModel(customer),
+                Map.ReportViewModelToReportModel(report));
         }
     }
 }

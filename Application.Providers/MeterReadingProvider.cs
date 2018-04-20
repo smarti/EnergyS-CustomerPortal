@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Application.ViewModels;
 using Domain.Models;
 using Domain.Services;
@@ -11,7 +7,7 @@ namespace Application.Providers
 {
     public class MeterReadingProvider
     {
-        private MeterReadingService _service;
+        private readonly MeterReadingService _service;
 
         public MeterReadingProvider()
         {
@@ -29,9 +25,7 @@ namespace Application.Providers
 
             List<MeterReadingViewModel> convertedMeterReadings = new List<MeterReadingViewModel>();
             foreach (MeterReadingModel meterReading in meterReadings)
-            {
                 convertedMeterReadings.Add(Map.MeterReadingModelToMeterReadingViewModel(meterReading));
-            }
 
             return convertedMeterReadings;
         }

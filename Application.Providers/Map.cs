@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Application.ViewModels;
 using Domain.Models;
-using Application.ViewModels;
 
 namespace Application.Providers
 {
@@ -120,12 +115,12 @@ namespace Application.Providers
 
         public static BillViewModel BillModelToBillViewModel(BillModel billModel)
         {
-            BillViewModel convertedBill = new BillViewModel()
+            BillViewModel convertedBill = new BillViewModel
             {
                 BillId = billModel.BillId,
                 Amount = billModel.Amount,
                 PaymentStatus = billModel.PaymentStatus,
-                LastUpdate = billModel.LastUpdate,
+                LastUpdate = billModel.LastUpdate
             };
 
             return convertedBill;
@@ -138,21 +133,20 @@ namespace Application.Providers
                 BillId = billViewModel.BillId,
                 Amount = billViewModel.Amount,
                 PaymentStatus = billViewModel.PaymentStatus,
-                LastUpdate = billViewModel.LastUpdate,
-                
+                LastUpdate = billViewModel.LastUpdate
             };
 
             return convertedBill;
         }
 
-        public static MeterReadingViewModel MeterReadingModelToMeterReadingViewModel(MeterReadingModel meterReadingViewModel)
+        public static MeterReadingViewModel MeterReadingModelToMeterReadingViewModel(
+            MeterReadingModel meterReadingViewModel)
         {
             MeterReadingViewModel convertedMeterReading = new MeterReadingViewModel
             {
                 MeterReadingId = meterReadingViewModel.MeterReadingId,
                 CurrentReading = meterReadingViewModel.CurrentReading,
-                LastUpdate = meterReadingViewModel.LastUpdate,
-
+                LastUpdate = meterReadingViewModel.LastUpdate
             };
 
             return convertedMeterReading;
@@ -160,13 +154,12 @@ namespace Application.Providers
 
         public static ContractViewModel ContractModelToContractViewModel(ContractModel contractViewModel)
         {
-            ContractViewModel convertContract = new ContractViewModel()
+            ContractViewModel convertContract = new ContractViewModel
             {
                 ContractId = contractViewModel.ContractId,
                 Description = contractViewModel.Description,
                 ContractStatus = contractViewModel.ContractStatus,
-                LastUpdate = contractViewModel.LastUpdate,
-
+                LastUpdate = contractViewModel.LastUpdate
             };
 
             return convertContract;
@@ -174,13 +167,12 @@ namespace Application.Providers
 
         public static ContractModel ContractViewModelToContractModel(ContractViewModel contractViewModel)
         {
-            ContractModel convertContract = new ContractModel()
+            ContractModel convertContract = new ContractModel
             {
                 ContractId = contractViewModel.ContractId,
                 Description = contractViewModel.Description,
                 ContractStatus = contractViewModel.ContractStatus,
-                LastUpdate = contractViewModel.LastUpdate,
-
+                LastUpdate = contractViewModel.LastUpdate
             };
 
             return convertContract;
