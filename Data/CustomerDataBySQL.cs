@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Data.Entities;
 
 namespace Data
 {
     public class CustomerDataBySQL
     {
-        private DBContext _context;
+        private readonly DBContext _context;
 
         public CustomerDataBySQL(DBContext context)
         {

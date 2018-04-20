@@ -1,13 +1,10 @@
+using System;
+using System.Data.Entity;
 using Data.Entities;
 
 namespace Data
 {
-    using System;
-    using System.Data.Entity;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
-
-    public partial class DBContext : DbContext
+    public class DBContext : DbContext
     {
         public DBContext()
             : base("name=DBContext")

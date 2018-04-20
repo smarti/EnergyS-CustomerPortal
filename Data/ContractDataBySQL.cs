@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Data.Entities;
 
 namespace Data
@@ -15,11 +12,13 @@ namespace Data
         {
             _context = context;
         }
+
         public List<Contract> GetAllContractsByCustomer(Customer customer)
         {
             List<Contract> contracts = new List<Contract>();
 
-            contracts.AddRange(_context.Contracts.Where(contract => contract.Customer.CustomerId == customer.CustomerId));
+            contracts.AddRange(
+                _context.Contracts.Where(contract => contract.Customer.CustomerId == customer.CustomerId));
 
             return contracts;
         }
