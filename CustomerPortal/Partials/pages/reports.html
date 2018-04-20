@@ -11,11 +11,11 @@
                 <ul class="nav navbar-nav">
                     <li><a ui-sref="dashboard({customerId: '{{reportCtrl.data.customerId}}' })">Dashboard</a></li>
                     <li><a ui-sref="contracts({customerId: '{{reportCtrl.data.customerId}}' })">Contracten</a></li>
-                    <li><a ui-sref="bills({customerId: '{{reportCtrl.data.customerId}}' })">Facturen</a></li>
+                    <li><a ui-sref="bills({customerId: '{{reportCtrl.data.customerId}}' })">Facturen (UC 8)</a></li>
                     <li><a ui-sref="reports({customerId: '{{reportCtrl.data.customerId}}' })">Meldingen</a></li>
                 </ul>
                 <ul class="nav navbar-nav">
-                    <li><a ui-sref="login({customerId: '{{reportCtrl.data.customerId}}' })">Login</a></li>
+                    <li><a ui-sref="login({customerId: '{{reportCtrl.data.customerId}}' })">Log in (UC 1)</a></li>
                 </ul>
             </div>
         </div>
@@ -27,7 +27,7 @@
                 type="button"
                 ng-click="reportCtrl.showForm('addReport')"
                 ng-if="reportCtrl.currentForm === 'showReports'">
-            Nieuwe melding
+            Nieuwe melding (UC 2, UC 3, UC 4)
         </button>
     </div>
 </div>

@@ -11,11 +11,11 @@
                 <ul class="nav navbar-nav">
                     <li><a ui-sref="dashboard({customerId: '{{dashboardCtrl.data.customerId}}' })">Dashboard</a></li>
                     <li><a ui-sref="contracts({customerId: '{{dashboardCtrl.data.customerId}}' })">Contracten</a></li>
-                    <li><a ui-sref="bills({customerId: '{{dashboardCtrl.data.customerId}}' })">Facturen</a></li>
+                    <li><a ui-sref="bills({customerId: '{{dashboardCtrl.data.customerId}}' })">Facturen (UC 8)</a></li>
                     <li><a ui-sref="reports({customerId: '{{dashboardCtrl.data.customerId}}' })">Meldingen</a></li>
                 </ul>
                 <ul class="nav navbar-nav">
-                    <li><a ui-sref="login({customerId: '{{dashboardCtrl.data.customerId}}' })">Login</a></li>
+                    <li><a ui-sref="login({customerId: '{{dashboardCtrl.data.customerId}}' })">Log in (UC 1)</a></li>
                 </ul>
             </div>
         </div>
@@ -24,7 +24,7 @@
 <div class="container-fluid">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <p>Meterstand</p>
+            <p>Meterstand (UC 7)</p>
         </div>
         <div>
             <p ng-repeat="meterReading in dashboardCtrl.data.meterReadings">{{meterReading.CurrentReading}}Kwh</p>
@@ -32,7 +32,7 @@
     </div>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <a ui-sref="bills({customerId: '{{dashboardCtrl.data.customerId}}'})">Facturen</a>
+            <a ui-sref="bills({customerId: '{{dashboardCtrl.data.customerId}}'})">Facturen (UC 8)</a>
         </div>
         <table class="table">
             <thead>
