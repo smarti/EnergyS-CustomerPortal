@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using Application.Providers;
@@ -15,7 +13,7 @@ namespace CustomerPortal.API.Controllers
     {
         private readonly ReportProvider _provider;
 
-        public ReportController() : base()
+        public ReportController()
         {
             _provider = new ReportProvider();
         }
@@ -37,7 +35,6 @@ namespace CustomerPortal.API.Controllers
             reportViewModel.LastUpdate = DateTime.Now;
 
             _provider.CreateReportByCustomerId(customerId, reportViewModel);
-
         }
     }
 }

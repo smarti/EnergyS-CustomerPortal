@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Web;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using Application.Providers;
@@ -14,9 +11,9 @@ namespace CustomerPortal.API.Controllers
     [RoutePrefix("api/contracts")]
     public class ContractController : ApiController
     {
-        private ContractProvider _provider;
+        private readonly ContractProvider _provider;
 
-        public ContractController() : base()
+        public ContractController()
         {
             _provider = new ContractProvider();
         }
@@ -39,7 +36,6 @@ namespace CustomerPortal.API.Controllers
                 ContractStatus = "In behandeling",
                 Description = description,
                 LastUpdate = DateTime.Now
-
             };
             _provider.CreateContractByCustomerId(customerId, contract);
         }

@@ -1,22 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
+﻿using System.Web.Http;
 using System.Web.Http.Cors;
 using Application.Providers;
 using Application.ViewModels;
 
 namespace CustomerPortal.API.Controllers
 {
-
     [EnableCors("*", "*", "*")]
     [RoutePrefix("api/customers")]
     public class CustomerController : ApiController
     {
         private readonly CustomerProvider _provider;
 
-        public CustomerController() : base()
+        public CustomerController()
         {
             _provider = new CustomerProvider();
         }
@@ -34,7 +29,8 @@ namespace CustomerPortal.API.Controllers
         [HttpPost]
         public void ChangeCustomerPassword([FromBody] ChangePasswordDTO changePasswordDTO)
         {
-            _provider.ChangeCustomerPassword(changePasswordDTO.CustomerId, changePasswordDTO.OldPassword, changePasswordDTO.NewPassword);
+            _provider.ChangeCustomerPassword(changePasswordDTO.CustomerId, changePasswordDTO.OldPassword,
+                changePasswordDTO.NewPassword);
         }
     }
 }

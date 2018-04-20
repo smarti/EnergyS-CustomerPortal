@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using Application.Providers;
@@ -14,10 +10,9 @@ namespace CustomerPortal.API.Controllers
     [Route("api/{customerId}/meterReadings")]
     public class MeterReadingController : ApiController
     {
+        private readonly MeterReadingProvider _provider;
 
-        private MeterReadingProvider _provider;
-
-        public MeterReadingController() : base()
+        public MeterReadingController()
         {
             _provider = new MeterReadingProvider();
         }
@@ -25,11 +20,9 @@ namespace CustomerPortal.API.Controllers
         [HttpGet]
         public List<MeterReadingViewModel> GetAllMeterReadingsByCustomerId(int customerId)
         {
-           List<MeterReadingViewModel> meterReadings = _provider.GetAllMeterReadingsByCustomerId(customerId);
+            List<MeterReadingViewModel> meterReadings = _provider.GetAllMeterReadingsByCustomerId(customerId);
 
             return meterReadings;
-
         }
-
     }
 }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http.Headers;
+﻿using System.Net.Http.Headers;
 using System.Web.Http;
 
 namespace CustomerPortal.API
@@ -20,9 +17,9 @@ namespace CustomerPortal.API
             config.EnableCors();
 
             config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{action}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                "DefaultApi",
+                "api/{controller}/{action}/{id}",
+                new {id = RouteParameter.Optional}
             );
         }
     }
