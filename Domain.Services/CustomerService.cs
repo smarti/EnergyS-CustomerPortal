@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Data;
+﻿using Data;
 using Domain.Models;
 
 namespace Domain.Services
 {
     public class CustomerService
     {
-        private DBContext _context;
-        private CustomerDataBySQL _data;
+        private readonly DBContext _context;
+        private readonly CustomerDataBySQL _data;
 
         public CustomerService()
         {
@@ -29,7 +24,7 @@ namespace Domain.Services
             if (_data.GetCustomerByEMail(eMail) == null)
                 return 0;
 
-            CustomerModel customer = Map.CustomerToCustomerModel(_data.GetCustomerByEMail(eMail)); 
+            CustomerModel customer = Map.CustomerToCustomerModel(_data.GetCustomerByEMail(eMail));
 
             if (customer != null && password == customer.Password.PasswordHash)
                 return customer.CustomerId;

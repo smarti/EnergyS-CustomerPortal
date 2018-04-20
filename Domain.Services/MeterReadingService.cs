@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Data;
 using Data.Entities;
 using Domain.Models;
@@ -11,8 +7,8 @@ namespace Domain.Services
 {
     public class MeterReadingService
     {
-        private DBContext _context;
-        private MeterReadingDataBySQL _data;
+        private readonly DBContext _context;
+        private readonly MeterReadingDataBySQL _data;
 
         public MeterReadingService()
         {
@@ -22,14 +18,13 @@ namespace Domain.Services
 
         public List<MeterReadingModel> GetAllMeterReadingsByCustomer(CustomerModel customer)
         {
-            List<MeterReading> meterReadings = _data.GetAllMeterReadingsByCustomer(Map.CustomerModelToCustomer(customer));
+            List<MeterReading> meterReadings =
+                _data.GetAllMeterReadingsByCustomer(Map.CustomerModelToCustomer(customer));
 
             List<MeterReadingModel> convertedMeterReadings = new List<MeterReadingModel>();
 
             foreach (MeterReading meterReading in meterReadings)
-            {
                 convertedMeterReadings.Add(Map.MeterReadingToMeterReadingModel(meterReading));
-            }
 
             return convertedMeterReadings;
         }

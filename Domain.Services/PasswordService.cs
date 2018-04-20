@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Data;
+﻿using Data;
 using Domain.Models;
 
 namespace Domain.Services
 {
     public class PasswordService
     {
-        private DBContext _context;
-        private PasswordDataBySQL _data;
+        private readonly DBContext _context;
+        private readonly PasswordDataBySQL _data;
 
         public PasswordService()
         {

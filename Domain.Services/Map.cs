@@ -1,5 +1,4 @@
-﻿using System;
-using Data.Entities;
+﻿using Data.Entities;
 
 namespace Domain.Models
 {
@@ -48,7 +47,7 @@ namespace Domain.Models
 
         public static ReportModel ReportToReportModel(Report report)
         {
-            ReportModel convertedReport = new ReportModel()
+            ReportModel convertedReport = new ReportModel
             {
                 ReportId = report.ReportId,
                 Description = report.Description,
@@ -61,7 +60,7 @@ namespace Domain.Models
 
         public static Report ReportModelToReport(ReportModel report)
         {
-            Report convertedReport = new Report()
+            Report convertedReport = new Report
             {
                 ReportId = report.ReportId,
                 Description = report.Description,
@@ -75,7 +74,7 @@ namespace Domain.Models
 
         public static BillModel BillToBillModel(Bill bill)
         {
-            BillModel convertedBill = new BillModel()
+            BillModel convertedBill = new BillModel
             {
                 BillId = bill.BillId,
                 Amount = bill.Amount,
@@ -84,7 +83,6 @@ namespace Domain.Models
             };
 
             return convertedBill;
-
         }
 
         private static Bill BillModelToBill(BillModel bill)
@@ -137,33 +135,30 @@ namespace Domain.Models
                 City = address.City,
                 Country = address.Country
             };
-            
+
             return convertedAddress;
         }
 
         public static MeterReadingModel MeterReadingToMeterReadingModel(MeterReading meterReading)
         {
-            MeterReadingModel convertMeterReading = new MeterReadingModel()
+            MeterReadingModel convertMeterReading = new MeterReadingModel
             {
                 MeterReadingId = meterReading.MeterReadingId,
                 CurrentReading = meterReading.CurrentReading,
-                LastUpdate = meterReading.LastUpdate,
-
+                LastUpdate = meterReading.LastUpdate
             };
 
             return convertMeterReading;
-
         }
 
         public static ContractModel ContractToContractModel(Contract contract)
         {
-            ContractModel convertContract = new ContractModel()
+            ContractModel convertContract = new ContractModel
             {
                 ContractId = contract.ContractId,
                 Description = contract.Description,
                 ContractStatus = contract.ContractStatus,
-                LastUpdate = contract.LastUpdate,
-
+                LastUpdate = contract.LastUpdate
             };
 
             return convertContract;
@@ -171,13 +166,12 @@ namespace Domain.Models
 
         public static Contract ContractModelToContract(ContractModel contract)
         {
-            Contract convertContract = new Contract()
+            Contract convertContract = new Contract
             {
                 ContractId = contract.ContractId,
                 Description = contract.Description,
                 ContractStatus = contract.ContractStatus,
-                LastUpdate = contract.LastUpdate,
-
+                LastUpdate = contract.LastUpdate
             };
 
             return convertContract;

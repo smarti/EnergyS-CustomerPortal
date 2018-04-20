@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Domain.Models;
+﻿using System.Collections.Generic;
 using Data;
 using Data.Entities;
+using Domain.Models;
 
 namespace Domain.Services
 {
     public class ReportService
     {
-        private DBContext _context;
-        private ReportDataBySQL _data;
+        private readonly DBContext _context;
+        private readonly ReportDataBySQL _data;
 
         public ReportService()
         {
@@ -26,10 +22,7 @@ namespace Domain.Services
 
             List<ReportModel> convertedReports = new List<ReportModel>();
 
-            foreach (Report report in reports)
-            {
-                convertedReports.Add(Map.ReportToReportModel(report));
-            }
+            foreach (Report report in reports) convertedReports.Add(Map.ReportToReportModel(report));
 
             return convertedReports;
         }

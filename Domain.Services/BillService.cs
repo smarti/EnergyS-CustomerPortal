@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Data.Entities;
+﻿using System.Collections.Generic;
 using Data;
+using Data.Entities;
 using Domain.Models;
 
 namespace Domain.Services
 {
     public class BillService
     {
-        private DBContext _context;
-        private BillDataBySQL _data;
+        private readonly DBContext _context;
+        private readonly BillDataBySQL _data;
+
         public BillService()
         {
             _context = new DBContext();
@@ -25,10 +22,7 @@ namespace Domain.Services
 
             List<BillModel> convertedBills = new List<BillModel>();
 
-            foreach (Bill bill in bills)
-            {
-                convertedBills.Add(Map.BillToBillModel(bill));
-            }
+            foreach (Bill bill in bills) convertedBills.Add(Map.BillToBillModel(bill));
 
             return convertedBills;
         }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Data;
 using Data.Entities;
 using Domain.Models;
@@ -11,8 +7,8 @@ namespace Domain.Services
 {
     public class ContractService
     {
-        private DBContext _context;
-        private ContractDataBySQL _data;
+        private readonly DBContext _context;
+        private readonly ContractDataBySQL _data;
 
         public ContractService()
         {
@@ -26,13 +22,11 @@ namespace Domain.Services
 
             List<ContractModel> convertedContracts = new List<ContractModel>();
 
-            foreach (Contract contract in contracts)
-            {
-                convertedContracts.Add(Map.ContractToContractModel(contract));
-            }
+            foreach (Contract contract in contracts) convertedContracts.Add(Map.ContractToContractModel(contract));
 
             return convertedContracts;
         }
+
         public void CreateContractByCustomer(CustomerModel customer, ContractModel contract)
         {
             Contract convertedContract = Map.ContractModelToContract(contract);
